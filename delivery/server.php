@@ -27,9 +27,9 @@ catch(Exception $e) {
 
 
 // delivery team Login
-if (isset($_POST['rescue_login_btn'])) {
-  $username = strtoupper($_POST['rescue_user_id']);
-  $password = $_POST['rescue_password'];
+if (isset($_POST['delivery_login_btn'])) {
+  $username = strtoupper($_POST['delivery_user_id']);
+  $password = $_POST['delivery_password'];
   if (empty($username)) {
   	array_push($errors, "Username is required");
   }
@@ -38,8 +38,8 @@ if (isset($_POST['rescue_login_btn'])) {
   }
   if (count($errors) == 0) {
     $encrypted_password = md5($password);
-  	$rescue_login_query = "SELECT * FROM  delivery_team WHERE `team_username`='$username' AND `team_password`='$encrypted_password'";
-  	$results = mysqli_query($db, $rescue_login_query);
+  	$delivery_login_query = "SELECT * FROM  delivery_team WHERE `team_username`='$username' AND `team_password`='$encrypted_password'";
+  	$results = mysqli_query($db, $delivery_login_query);
   	if (mysqli_num_rows($results) == 1) {
     $row = mysqli_fetch_assoc($results);
   
@@ -61,7 +61,7 @@ if (isset($_POST['rescue_login_btn'])) {
   	  header('location: dashboard.php');
   	}else{
   		array_push($errors, "Incorrect Username or Password");
-      header('location: delivery.php');
+      header('location: index.php');
   	}
   }
 }
@@ -81,8 +81,8 @@ if (isset($_POST['view-task-btn'])) {
 
 
   if (count($errors) == 0) {
-$rescue_select_query = "SELECT * FROM `request_status` WHERE orderID ='$task_code' AND admNo='$student_reg' ";
-$select_results = mysqli_query($db, $rescue_select_query);
+$delivery_select_query = "SELECT * FROM `request_status` WHERE orderID ='$task_code' AND admNo='$student_reg' ";
+$select_results = mysqli_query($db, $delivery_select_query);
 if (mysqli_num_rows($select_results) == 1) {
 $row = mysqli_fetch_assoc($select_results);
   
@@ -250,7 +250,7 @@ if (isset($_POST['failed-task-btn'])) {
     }
 
     //function to reset password
-function send_password_reset($rescue_name,$rescue_email,$token){
+function send_password_reset($delivery_name,$delivery_email,$token){
 
   //Create an instance; passing `true` enables exceptions
   $mail = new PHPMailer(true);
@@ -269,7 +269,7 @@ function send_password_reset($rescue_name,$rescue_email,$token){
   $mail->setFrom('info@maseno.co.ke');
   $mail->FromName = 'Maseno University';
 
-  $mail->addAddress($rescue_email);               //Name is optional
+  $mail->addAddress($rdelivery_email);               //Name is optional
   // $mail->addReplyTo('info@example.com', 'Information');
   // $mail->addCC('cc@example.com');
   // $mail->addBCC('bcc@example.com');
@@ -283,9 +283,9 @@ function send_password_reset($rescue_name,$rescue_email,$token){
 $email_template = "
 <html>
 <body style='background:rgb(216, 210, 210);'>
-<h2 style='color:black;'>Hello, $rescue_name </h2>
+<h2 style='color:black;'>Hello, $delivery_name </h2>
 <h3> You are receiving this email because we received a password reset request for your account.</h3>
-<h3>If you are the one who initiated this process please <a href='https://rescueteam-maseno.blinx.co.ke/password-change.php?token=$token' style='font-weight:bold;'>Click Here</a> to RESET your password, else IGNORE this Email.</h3>
+<h3>If you are the one who initiated this process please <a href='https://deliveryteam-maseno.blinx.co.ke/password-change.php?token=$token' style='font-weight:bold;'>Click Here</a> to RESET your password, else IGNORE this Email.</h3>
 
 <br>
 <img src='https://www.maseno.ac.ke/sites/default/files/Maseno-logo_v5.png' alt=''>
@@ -301,7 +301,7 @@ $email_template = "
 
 //Password Reset for delivery team
 if(isset($_POST['password_reset_btn'])){
-  $rescue_email = strtolower($_POST['rescue_email']);
+  $delivery_email = strtolower($_POST['delivery_email']);
 
 $token = sha1(rand());//generating token
 
@@ -309,23 +309,23 @@ $token = sha1(rand());//generating token
 // $token_value = $_SESSION['toke_val'];
 
 //check if  email already exists
-$check_email = "SELECT * FROM `delivery_team` WHERE `team_email`='$rescue_email' LIMIT 1 ";
+$check_email = "SELECT * FROM `delivery_team` WHERE `team_email`='$delivery_email' LIMIT 1 ";
 $mail_results = mysqli_query($db, $check_email);
 
 if(mysqli_num_rows($mail_results) > 0){
 $row = mysqli_fetch_array($mail_results);
 
-$rescue_email = $row['team_email'];
-$rescue_username = $row['team_username'];
-$rescue_name = $row['team_name'];
+$delivery_email = $row['team_email'];
+$delivery_username = $row['team_username'];
+$delivery_name = $row['team_name'];
 
 
 //Update Password Reset Token
-$update_token = "UPDATE delivery_team SET password_reset_token = '$token' WHERE team_email ='$rescue_email' LIMIT 1";
+$update_token = "UPDATE delivery_team SET password_reset_token = '$token' WHERE team_email ='$delivery_email' LIMIT 1";
 $token_update_result = mysqli_query($db,$update_token);
 
 if($token_update_result == true){
-send_password_reset($rescue_name,$rescue_email,$token);
+send_password_reset($delivery_name,$delivery_email,$token);
 $_SESSION['email_status'] = 'A password reset link has been emailed to you.';
 header("Location: forgot-password.php");
 exit(0);
@@ -357,7 +357,7 @@ if(isset($_POST['update_password_btn'])){
     $password = md5($password2);//encrypt the password before saving in the database
     $password_update = "UPDATE `delivery_team` SET `team_password`='$password' WHERE password_reset_token = '$token' ";
     $results = mysqli_query($db, $password_update);
-    header("Location: delivery.php");
+    header("Location: index.php");
   }else{
     echo '<script>
  alert("Unable to Change Password. Please Contact the System Administrator!");

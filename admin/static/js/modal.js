@@ -129,8 +129,8 @@ butons.forEach(function (Buton) {
   });
 });
 
-function editRescueTeam() {
-  $("#editRescueTeam").modal("show");
+function editDeliveryTeam() {
+  $("#editDeliveryTeam").modal("show");
 }
 let editButtons = document.querySelectorAll(".team-edit-btn");
 editButtons.forEach(function (editButton) {
@@ -151,7 +151,7 @@ editButtons.forEach(function (editButton) {
     let teammail = editButton.dataset.teammail;
     document.getElementById("teammail").value = teammail;
 
-    editRescueTeam();
+    editDeliveryTeam();
   });
 });
 
@@ -163,8 +163,8 @@ deleteButtons.forEach(function (deleteButton) {
   deleteButton.addEventListener("click", function (e) {
     e.preventDefault();
 
-    let rescueteamid = deleteButton.dataset.rescueteamid;
-    document.getElementById("teamIdentityNumber").value = rescueteamid;
+    let deliveryteamid = deleteButton.dataset.deliveryteamid;
+    document.getElementById("teamIdentityNumber").value = deliveryteamid;
 
     deleteTeamModal();
   });

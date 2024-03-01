@@ -1,8 +1,8 @@
 <?php
 include 'server.php';
-$rescue_Lat =  $_SESSION['rescue_lat'];
-$rescue_Long=   $_SESSION['rescue_long'];
-$rescue_ip  = $_SESSION['ipaddress'];
+$delivery_Lat =  $_SESSION['delivery_lat'];
+$delivery_Long=   $_SESSION['delivery_long'];
+$delivery_ip  = $_SESSION['ipaddress'];
 $team_name = $_SESSION['team_name'];
 $code = $_SESSION['HELPCODE'];
 ?>
@@ -72,9 +72,9 @@ include './components/header.php';
             <input  type='text' hidden  name='student_reg' value='$student_reg'>
             <input  type='text' hidden  name='fname' value=' $fname'>
             <input  type='text' hidden name='lname' value=' $lname'>
-            <input  type='text'  hidden name='rescue_ip' value='$rescue_ip'>
-            <input  type='text' hidden  name='rescue_longitude' value='$rescue_Long'>
-            <input  type='text' hidden  name='rescue_latitude' value='$rescue_Lat'>
+            <input  type='text'  hidden name='delivery_ip' value='$delivery_ip'>
+            <input  type='text' hidden  name='delivery_longitude' value='$delivery_Long'>
+            <input  type='text' hidden  name='delivery_latitude' value='$delivery_Lat'>
             <input  type='text' hidden  name='r_timestamp' value='$time'>
     
             <input type='submit' value='View Task' name='view-task-btn' class='btn btn-warning m-1'>

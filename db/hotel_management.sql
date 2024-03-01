@@ -276,7 +276,7 @@ ALTER TABLE `delivery_team`
 ALTER TABLE `delivery_team_members`
   ADD PRIMARY KEY (`member_id`),
   ADD KEY `role_id` (`role_id`),
-  ADD KEY `rescue_team_id` (`delivery_team_id`) USING BTREE,
+  ADD KEY `delivery_team_id` (`delivery_team_id`) USING BTREE,
   ADD KEY `member_sno` (`id`);
 
 --
@@ -285,7 +285,7 @@ ALTER TABLE `delivery_team_members`
 ALTER TABLE `delivery_team_tasks`
   ADD PRIMARY KEY (`id`),
   ADD KEY `assigning_admin_id` (`assigning_admin_id`),
-  ADD KEY `rescue_team_id` (`delivery_team_id`),
+  ADD KEY `delivery_team_id` (`delivery_team_id`),
   ADD KEY `helpcode` (`food_order_code`);
 
 --
@@ -391,7 +391,7 @@ ALTER TABLE `users_details`
 --
 ALTER TABLE `delivery_team_members`
   ADD CONSTRAINT `member_role` FOREIGN KEY (`role_id`) REFERENCES `role_details` (`role_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `rescue_team` FOREIGN KEY (`delivery_team_id`) REFERENCES `delivery_team` (`team_id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `delivery_team` FOREIGN KEY (`delivery_team_id`) REFERENCES `delivery_team` (`team_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `delivery_team_tasks`

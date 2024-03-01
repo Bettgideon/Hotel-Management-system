@@ -122,7 +122,7 @@ $admin_id = $_SESSION['admin_id'];
             <textarea class="form-control" id="request_details" readonly ></textarea>
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label">Rescue Report:</label>
+            <label for="message-text" class="col-form-label">delivery Report:</label>
             <textarea class="form-control" id="incident-report" readonly></textarea>
           </div>
           <div class="modal-footer">

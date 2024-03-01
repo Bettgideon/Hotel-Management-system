@@ -42,9 +42,9 @@ include 'server.php';
             $member_fname = $row["fname"];
             $member_lname = $row["lname"];
             $member_phone = $row["phone"];
-            $member_team_id = $row["rescue_team_id"];
+            $member_team_id = $row["delivery_team_id"];
 
-            $data_fetch = "SELECT * FROM `rescue_team` WHERE team_id='$member_team_id'";
+            $data_fetch = "SELECT * FROM `delivery_team` WHERE team_id='$member_team_id'";
             $result = mysqli_query($db, $data_fetch);
             if ($result->num_rows > 0){
               while($row = $result->fetch_assoc()) {
@@ -118,9 +118,9 @@ include 'server.php';
             $member_fname = $row["fname"];
             $member_lname = $row["lname"];
             $member_phone = $row["phone"];
-            $member_team_id = $row["rescue_team_id"];
+            $member_team_id = $row["delivery_team_id"];
 
-            $data_fetch = "SELECT * FROM `rescue_team` WHERE team_id='$member_team_id'";
+            $data_fetch = "SELECT * FROM `delivery_team` WHERE team_id='$member_team_id'";
             $result = mysqli_query($db, $data_fetch);
             if ($result->num_rows > 0){
               while($row = $result->fetch_assoc()) {
@@ -203,7 +203,7 @@ include 'server.php';
             <label for="recipient-name" class="col-form-label">Team Name:</label>
             <select name='paramedic_team_id' class="form-control form-control-sm" required="required">
               <option selected value="">Select Team</option>
-              <?php $sql=mysqli_query($db,"select * from rescue_team");
+              <?php $sql=mysqli_query($db,"select * from delivery_team");
               while ($rw=mysqli_fetch_array($sql)) {
                 ?>
                 <option value="<?php echo htmlentities($rw['team_id']);?>"><?php echo htmlentities($rw['team_name']);?></option>

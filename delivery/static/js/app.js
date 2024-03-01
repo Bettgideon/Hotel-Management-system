@@ -16,8 +16,8 @@ function getCurrentLocationHandler(e) {
         // console.log(userLocation);
 
         //Update Lat and Long on Form
-        document.getElementById("rescue_longitude").value = userLocation.lng;
-        document.getElementById("rescue_latitude").value = userLocation.lat;
+        document.getElementById("delivery_longitude").value = userLocation.lng;
+        document.getElementById("delivery_latitude").value = userLocation.lat;
 
         return;
       },

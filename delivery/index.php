@@ -44,7 +44,7 @@ include './components/header.php';
                   class="form-control"
                   id="inputEmail3"
                   placeholder="User ID"
-                  name="rescue_user_id" required
+                  name="delivery_user_id" required
                 />
               </div>
             </div>
@@ -58,7 +58,7 @@ include './components/header.php';
                   class="form-control"
                   id="inputPassword3"
                   placeholder="Password"
-                  name="rescue_password" required
+                  name="delivery_password" required
                 />
               </div>
             </div>
@@ -75,7 +75,7 @@ include './components/header.php';
               <div class="col-sm-3">
                 <button
                   type="submit"
-                  name="rescue_login_btn"
+                  name="delivery_login_btn"
                   class="btn btn-primary btn-block"
                 >
                   Sign In

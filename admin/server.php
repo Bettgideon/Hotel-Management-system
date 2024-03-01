@@ -695,7 +695,7 @@ if (count($errors) == 0) {
 //   $_SESSION['nurse_email'] = $nurse_mail;
 //   $_SESSION['nurse_phone'] =$nurse_phone;
 //   $_SESSION['nurse_role_id'] =$nurse_role_id;
-//   $_SESSION['nurse_rescue_team_id'] =$nurse_team_id;
+//   $_SESSION['nurse_delivery_team_id'] =$nurse_team_id;
  
 //   header('location: nurse_view.php');
 //   }else{

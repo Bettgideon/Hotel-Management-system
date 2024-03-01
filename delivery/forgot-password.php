@@ -57,7 +57,7 @@ if(isset($_SESSION['email_status']))
                 <div class="form-group row">      
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Email Address</label>
                         <div class="col-sm-9">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="Enter your Email Address" name="rescue_email"
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Enter your Email Address" name="delivery_email"
                                 required />
                         </div>
                     </div>

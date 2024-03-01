@@ -6,8 +6,8 @@ $student_lat = $_SESSION['request_latitude'];
 $student_long = $_SESSION['request_longitude'];
 $request_Status = $_SESSION['status'];
 $student_Adm = $_SESSION['admNo'];
-$rescue_Lat =  $_SESSION['rescue_lat'];
-$rescue_Long=   $_SESSION['rescue_long'];
+$delivery_Lat =  $_SESSION['delivery_lat'];
+$delivery_Long=   $_SESSION['delivery_long'];
 $description = $_SESSION['taskDescription'];
 $locationDetails= $_SESSION['directions'];
 ?>
