@@ -1,0 +1,45 @@
+.landingpage-header-logo {
+    font-family: 'Roboto' sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    color: #144673;
+}
+.class-home{
+    font-family: 'Roboto' sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1A6FBC;
+
+}
+.class-room{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1A6FBC;
+
+}
+.class-fac{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1A6FBC;
+}
+.class-contact{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1A6FBC;
+    }
+.header-nav-item a:hover {
+    color: #144673;
+}

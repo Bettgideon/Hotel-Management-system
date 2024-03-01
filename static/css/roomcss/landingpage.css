@@ -1,0 +1,219 @@
+/* Header> NAv */
+.landingpage-header-logo {
+    font-family: 'Roboto' sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    color: #144673;
+}
+.class-home{
+    font-family: 'Roboto' sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1A6FBC;
+
+}
+.class-room{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1A6FBC;
+
+}
+.class-fac{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1A6FBC;
+}
+.class-contact{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #1A6FBC;
+    }
+.header-nav-item a:hover {
+    color: #144673;
+}
+
+
+
+
+/* CAROUSEL  */
+.bookingInput{
+    position: absolute;
+    left: 45px;
+    z-index: 10;
+    background: #144673;
+    
+  }
+  
+  
+  .inputBorder{
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    background: #144673;
+    color: white;
+  }
+  
+  .carousel-inner img {
+    margin-top: 0px;
+    object-fit: cover !important;
+    display: block;
+   
+  }
+  #carousel{
+    position: relative;
+    z-index: -10;   
+  }
+  .carousel-caption h3{
+    font-size: 50px;
+    text-transform: uppercase;
+  }
+  .carousel-control.right{
+    background-image: none;
+  }
+  .carousel-control.left{
+    background-image: none;
+  }
+  
+  button{
+    border-radius: 5px;
+  }
+  /* ----------------------HIGHLIGHT PERFECT ESCAPE---------------------------------------------------- */
+  .stackSection{
+    position: relative;
+  }
+  .stacktext{
+    font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  color: #444444;
+  }
+  
+  .stack {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 50px minmax(150px, auto);
+    grid-gap: 1px;
+  
+  }
+  .stack > div:nth-child(1){
+    grid-row: 1/3 ;
+    grid-column:1/4;
+  }
+  .stack > div :nth-child(2){
+    grid-row:3/ 5;
+      grid-column: 2/3;
+      z-index: 10px;
+      
+      
+  }
+  .stack > div:nth-child(3){
+      grid-row: 2/5;
+      grid-column:3/5 ;
+  }
+  
+  .feedbacks{
+    font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 18px;
+  text-align: center;
+  }
+
+/* SPECIAL OFFR BEGINNING */
+
+.specialoffer{
+    background-color:#D9D6D6;
+    background-size: cover;
+    height: 636px;
+    /* position: absolute; */
+    overflow-x: hidden;
+    
+} 
+.card{
+margin: 30px;
+border: hidden;
+
+}
+.card-text{
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 20px;
+color: #444444;
+}
+
+.card-title{
+font-family: Roboto;
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+color: #333333;
+}
+
+.card-body{
+    background-color:#D9D6D6;
+}
+.card-group{
+    padding: 30px;
+}
+.card-head{
+font-family: Roboto;
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 33px;
+color: #333333;
+margin: 10px;
+margin-right: 20px;
+text-align: left;
+}
+
+/* SPECIAL OFFER END */
+
+.dealavailable p{
+    font-size: 14px;
+    color: #333333;
+    line-height: 18px;
+    font-weight: bold;
+}
+.dealavailable span{
+    font-size: 16px;
+    color: #333333;
+   
+}
+.dealavailable .card{
+   border: none;
+   
+}
+.dealavailable hr{
+    border: 1px solid #B7B0B0;
+   
+}
+
+.dealavailable button{
+    border: 1px solid #144673;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: #144673;
+    background: transparent;
+    padding: 7px 15px;
+ 
+}
+
+
+
+

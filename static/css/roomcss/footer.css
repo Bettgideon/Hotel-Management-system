@@ -1,0 +1,64 @@
+@font-face{
+    font-family: Roboto;
+    src: url(RobotoSlab-Regular.ttf);
+   }
+   
+   
+   #footer{background: #144673;
+       color: #F5FAFF;
+       font-size:1.3vw !important;
+       padding-top: 5%;
+       letter-spacing: 0.7px;
+       font-family: Roboto;
+      
+   }
+   
+   .col{
+     padding-left: 2%;
+   }
+   
+   #paragraph1,#paragraph2,#paragraph3,#paragraph4{
+   margin-bottom: 30px;
+   }
+   
+   .dot{
+       width: 3.5px;
+   height: 3.5px;
+       background: #FFFFFF;
+       margin: 1.5% 0;
+   }
+   
+   .dot-hidden{
+       visibility: hidden;
+   }
+   
+   .first-row{
+       display: flex;
+       justify-content: space-around; 
+   }
+   
+   .second-row{
+       display: flex;
+       justify-content: space-around; 
+   }
+   .third-row{
+       display: flex;
+       justify-content: space-around; 
+   }
+   .fourth-row{
+       display: flex;
+       justify-content: space-around; 
+   }
+   .fifth-row{
+       display: flex;
+       justify-content: space-around; 
+   }
+   #polka{
+    margin-top: 10%;   
+   }
+   
+   @media(max-width:730px){
+    #footer{
+     font-size:2vw !important;
+    }
+   }
