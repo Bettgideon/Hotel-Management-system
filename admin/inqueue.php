@@ -37,7 +37,7 @@ $admin_name = $admin_fname. " ".$admin_lname;
         
     <?php
     if($admin_id){
-        $data_fetch_query = "SELECT request_status.id, request_status.helpID,request_status.manual_directions,request_status.status,request_status.food_description,
+        $data_fetch_query = "SELECT request_status.id, request_status.orderID,request_status.manual_directions,request_status.status,request_status.food_description,
         request_status.admNo,request_status.timestamp,users_details.regNum,users_details.regNum,
         users_details.firstname,users_details.lastname,users_details.phonenumber
         FROM request_status
@@ -46,7 +46,7 @@ $admin_name = $admin_fname. " ".$admin_lname;
         if ($data_result->num_rows > 0){
             while($row = $data_result->fetch_assoc()) {
 
-            $help_code=$row["helpID"];
+            $order_code=$row["orderID"];
             $request_status=$row["status"];
             $name=$row["firstname"] ." ".$row["lastname"];
             $phone=$row["phonenumber"];
@@ -56,14 +56,14 @@ $admin_name = $admin_fname. " ".$admin_lname;
        
         echo "<tr style='font-weight:normal'> <td>" .$row["firstname"]." ".$row["lastname"]. "</td>";
         echo "<td>" .$row["phonenumber"]."</td>";
-        echo "<td>" .$row["helpID"]."</td>";
+        echo "<td>" .$row["orderID"]."</td>";
         echo "<td>" .$row["timestamp"]."</td>";
         echo "<td>" .$row["manual_directions"]."</td>";
         echo "<td>
         
         <form method ='POST' action='server.php'>
-        <input  type='text' hidden name='help_code' value='$help_code'>
-        <input type='submit'  data-description ='$description' data-adminname='$admin_name' data-adminid='$admin_id' data-helpcode='$help_code' data-name='$name' data-phone='$phone' data-status='$request_status' value='View Task' id='view_task_button' class='btn btn-info taskViewButton'>
+        <input  type='text' hidden name='order_code' value='$order_code'>
+        <input type='submit'  data-description ='$description' data-adminname='$admin_name' data-adminid='$admin_id' data-ordercode='$order_code' data-name='$name' data-phone='$phone' data-status='$request_status' value='View Task' id='view_task_button' class='btn btn-info taskViewButton'>
         </form>
         </td> </tr>";
         }
@@ -111,7 +111,7 @@ $admin_name = $admin_fname. " ".$admin_lname;
           </div>
           <div class="form-group">
           <label for="recipient-name" class="col-form-label">delivery team</label>
-            <input type="text" name='studentHelpCode' readonly required class="form-control" id="sHelpCode" value="">
+            <input type="text" name='studentOrderCode' readonly required class="form-control" id="sOrderCode" value="">
           </div>
           <div class="form-group">
           <label for="recipient-name" class="col-form-label">Request Status</label>

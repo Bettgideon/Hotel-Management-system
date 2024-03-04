@@ -47,7 +47,7 @@ $admin_identity = $_SESSION['admin_id'];
     
                 $fName=$row["firstname"];
                 $lName=$row["lastname"];
-                $help_code=$row["orderID"];
+                $order_code=$row["orderID"];
                 $request_status=$row["status"];
                 $team_id=$row["delivery_team_id"];
                 $request_time=$row["assignment_time"];
@@ -64,14 +64,14 @@ $admin_identity = $_SESSION['admin_id'];
           
             echo "<tr style='font-weight:normal'> <td>" .$fName. " ".$lName. "</td>";
        
-            echo "<td>" .$help_code."</td>";
+            echo "<td>" .$order_code."</td>";
             echo "<td>" .$team_name."</td>";
             echo "<td>" .$request_time."</td>";
             echo "<td>
             
             <form method ='POST' action='server.php'>
-            <input hidden type='text' name='help_code_2' value='$help_code'>
-            <input type='submit' data-adminidentity= '$admin_identity' data-previous_team='$team_name' data-helpcode ='$help_code' name='reassign-btn' value='Change Team' class='btn btn-info team_change_button'>
+            <input hidden type='text' name='order_code_2' value='$order_code'>
+            <input type='submit' data-adminidentity= '$admin_identity' data-previous_team='$team_name' data-ordercode ='$order_code' name='reassign-btn' value='Change Team' class='btn btn-info team_change_button'>
             </form>
             </td> </tr>";
             }
@@ -110,7 +110,7 @@ $admin_identity = $_SESSION['admin_id'];
         <form method="POST" action="server.php">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">order code:</label>
-            <input type="text" readonly class="form-control" name="helpCode" id="request_helpcode" value=''>
+            <input type="text" readonly class="form-control" name="orderCode" id="request_ordercode" value=''>
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Previously Assigned Team</label>

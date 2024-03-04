@@ -79,7 +79,7 @@ if (count($errors) == 0) {
 
   // LOGIN USER
     if (isset($_POST['login_btn'])) {
-      $helpCode= strtoupper(random_string(7));
+      $orderCode= strtoupper(random_string(7));
       $username = strtoupper($_POST['regno']);
       $password = $_POST['password'];
       if (empty($username)) {
@@ -109,7 +109,7 @@ $errors=array();
         
           //sessions
           $_SESSION['username'] = $regNumber;
-          $_SESSION['helpcode'] = $helpCode;
+          $_SESSION['orderID'] = $orderID;
           $_SESSION['firstname'] = $firstName;
           $_SESSION['lastname'] =$lastName;
           $_SESSION['emailaddress'] =$Email;
@@ -127,91 +127,116 @@ $errors=array();
     }
 
     // Update Location Details
-if (isset($_POST['help-btn'])) {
-  // receive all input values from the form
-  $ipAddress= $_POST['ipaddress'];
-  $Longitude=  $_POST['longitude'];
-  $Latitude =  $_POST['latitude'];
-  $regno =  $_POST['username'];
-  $helpCode=  $_POST['helpcode'];
-  $type_emergency=  $_POST['food_type'];
-  $food_description=  $_POST['food_description'];
-  // form validation: ensure that the form is correctly filled ...
-// by adding (array_push()) corresponding error unto $errors array
-if (empty($ipAddress)) { array_push($errors, "Unable to Track your Ip Address"); }
-if (empty($Longitude)) { array_push($errors, "Unable to Track your Longitude"); }
-if (empty($Latitude)) { array_push($errors, "Unable to Track your Latitude"); }
-if (empty($regno)) { array_push($errors, "Unable to Track your Registration Number"); }
-if (empty($helpCode)) { array_push($errors, "Unable to Track your Help Code"); }
-if (empty($type_emergency)) { array_push($errors, "Please Select the Type of Emergency"); }
-// Finally, register user location
-if (count($errors) == 0) {
-  $status_query ="INSERT INTO `request_status`(`orderID`, `admNo`,`ip_address`, `request_latitude`, `request_longitude`,`food_type`, `food_description`) 
-  VALUES ('$helpCode','$regno','$ipAddress','$Latitude','$Longitude','$type_emergency','$food_description')";
-  mysqli_query($db, $status_query);
-//Select data from location table
-              $location_Select_query = "SELECT * FROM request_status WHERE `orderID`='$helpCode'";
-                  $results = mysqli_query($db, $location_Select_query);
-                  if (mysqli_num_rows($results) == 1) {
-                    $row = mysqli_fetch_assoc($results);
-                    //row data
-                    $regNumber=$row['admNo'];
-                    $long=$row['request_longitude'];
-                    //sessions
-                    $_SESSION['user'] = $regNumber;
-                    $_SESSION['longitude'] = $long;
 
-                    //Get Admin Emails
-                    $admin_email = "SELECT * FROM SELECT * FROM `admin_details`";
-                    $admin_mail_results = mysqli_query($db, $admin_email);
-                    if (mysqli_num_rows($admin_mail_results) == 1) {
-                      $row = mysqli_fetch_assoc($admin_mail_results);
-                      $adminName=$row['admin_firstname']. " ".$row['admin_lastname'];
-                      $adminMail=$row['admin_email'];
-                      $adminTel=$row['admin_phone'];
-                      
-                    }
-                    // send_sms_toadmin();
-                    // send_notification_email($helpCode,$adminName,$adminMail);
+ // Ensure to start the session
+     // Define the $errors array
+    
+    if (isset($_POST['order-btn'])) {
+        // Receive all input values from the form
+        $ipAddress = $_POST['ipaddress'];
+        $longitude = $_POST['longitude'];
+        $latitude = $_POST['latitude'];
+        $regno = $_POST['username'];
+        $orderCode = $_POST['ordercode'];
+        $food_type = $_POST['food_type'];
+        $food_description = $_POST['food_description'];
+    
+        // Form validation: ensure that the form is correctly filled ...
+        // by adding (array_push()) corresponding error unto $errors array
+        if (empty($ipAddress)) {
+            array_push($errors, "Unable to Track your Ip Address");
+        }
+        if (empty($longitude)) {
+            array_push($errors, "Unable to Track your Longitude");
+        }
+        if (empty($latitude)) {
+            array_push($errors, "Unable to Track your Latitude");
+        }
+        if (empty($regno)) {
+            array_push($errors, "Unable to Track your Registration Number");
+        }
+        if (empty($orderCode)) {
+            array_push($errors, "Unable to Track your order code");
+        }
+        if (empty($food_type)) {
+            array_push($errors, "Please Select the Type of Food");
+        }
+    
+        // Finally, register user location
+        if (count($errors) == 0) {
+            // Use prepared statements or mysqli_real_escape_string for SQL injection prevention
+            $status_query = "INSERT INTO `request_status`(`orderID`, `admNo`, `ip_address`, `request_latitude`, `request_longitude`, `food_type`, `food_description`) 
+                            VALUES ('$orderCode','$regno','$ipAddress','$latitude','$longitude','$food_type','$food_description')";
+            mysqli_query($db, $status_query);
+    
+            // Select data from location table
+            $location_select_query = "SELECT * FROM request_status WHERE `orderID`='$orderCode'";
+            $results = mysqli_query($db, $location_select_query);
+    
+            if (mysqli_num_rows($results) == 1) {
+                $row = mysqli_fetch_assoc($results);
+    
+                // Sessions
+                $_SESSION['user'] = $row['admNo'];
+                $_SESSION['longitude'] = $row['request_longitude'];
+    
+                // Get Admin Emails
+                $admin_email_query = "SELECT * FROM `admin_details`";
+                $admin_mail_results = mysqli_query($db, $admin_email_query);
+    
+                if (mysqli_num_rows($admin_mail_results) == 1) {
+                    $admin_row = mysqli_fetch_assoc($admin_mail_results);
+                    $adminName = $admin_row['admin_firstname'] . " " . $admin_row['admin_lastname'];
+                    $adminMail = $admin_row['admin_email'];
+                    $adminTel = $admin_row['admin_phone'];
+    
+                    // send_sms_toadmin(); // Uncomment this if you have the function defined
+                    // send_notification_email($orderCode, $adminName, $adminMail); // Uncomment this if you have the function defined
+    
                     header('location: dashboard.php');
-                  }else{
+                } else {
                     array_push($errors, "Unable to process your request. Contact The System Administrator");
                     header('location: dashboard.php');
-                  }
-}else{
-                  header('location: dashboard.php');
-                  array_push($errors, "Unable to update data in the database");
-  }
-
-}
+                }
+            } else {
+                array_push($errors, "Unable to process your request. Contact The System Administrator");
+                header('location: dashboard.php');
+            }
+        } else {
+            header('location: dashboard.php');
+            array_push($errors, "Unable to update data in the database");
+        }
+    }
+    
+    
 
 
 //Manual Directions Update
 if(isset($_POST['manual-direction-btn'])){
   $adm= $_POST['adm'];
-  $helpcode= $_POST['code'];
+  $ordercode= $_POST['code'];
   $lat= 0;
   $long= 0;
   $ip= $_POST['ip'];
-  $emergencyType= $_POST['food_type'];
+  $foodType= $_POST['food_type'];
   $incident_directions= $_POST['student_manual_direction'];
   $description= $_POST['student_food_description'];
 
 
   if (empty($adm)) { array_push($errors, "Reg Number is missing"); }
-  if (empty($helpcode)) { array_push($errors, "Helpcode is required"); }
+  if (empty($orderpcode)) { array_push($errors, "ordercode is required"); }
   // if (empty($lat)) { array_push($errors, "Latitude is needed"); }
   // if (empty($long)) { array_push($errors, "Longitude is required"); }
   if (empty($ip)) { array_push($errors, "IP Address is needed"); }
-  if (empty($emergencyType)) { array_push($errors, "Emergency Type is needed"); }
+  if (empty($foodType)) { array_push($errors, "Emergency Type is needed"); }
   if (empty($incident_directions)) { array_push($errors, "Directions are needed"); }
 
   if (count($errors) == 0) {
     $data_update= "INSERT INTO `request_status`(`orderID`, `ip_address`, `request_latitude`, `request_longitude`, `food_type`, `manual_directions`, `food_description`, `admNo`)
-     VALUES ('$helpcode','$ip','$lat','$long','$emergencyType','$incident_directions','$description','$adm')";
+     VALUES ('$orderID','$ip','$lat','$long','$foodtype','$incident_directions','$description','$adm')";
     $result = mysqli_query($db, $data_update);
 //Select data from location table
-$location_Select_query = "SELECT * FROM request_status WHERE `orderID`='$helpcode' ";
+$location_Select_query = "SELECT * FROM request_status WHERE `orderID`='$orderID' ";
 $results = mysqli_query($db, $location_Select_query);
 if (mysqli_num_rows($results) == 1) {
   $row = mysqli_fetch_assoc($results);
@@ -221,7 +246,7 @@ if (mysqli_num_rows($results) == 1) {
   //sessions
   $_SESSION['user'] = $regNumber;
   // send_sms_toadmin();
-  // send_notification_email($helpcode,$adminName,$adminMail);
+  // send_notification_email($ordercode,$adminName,$adminMail);
   header("Location: dashboard.php");
 }else{
   array_push($errors, "Unable to process your request. Contact The System Administrator");
@@ -235,66 +260,50 @@ if (mysqli_num_rows($results) == 1) {
 }
 
 // booking process
-if(isset($_POST["submit"])){
-  $name = $_POST['name'];
-  $number=$_POST['number'];
-  $room_type=$_POST['room_type'];
-  $image=$_POST['image'];
-  $date=$_POST['date'];
-if($_FILES["image"]["error"] == 4){
-  echo
-  "<script> alert('Id image please'); </script>"
-  
-  ;
-}
-else{
-  $fileName = $_FILES["image"]["name"];
-  $fileSize = $_FILES["image"]["size"];
-  $tmpName = $_FILES["image"]["tmp_name"];
+ // Start output buffering
 
-  $validImageExtension = ['jpg', 'jpeg', 'png'];
-  $imageExtension = explode('.', $fileName);
-  $imageExtension = strtolower(end($imageExtension));
-  if ( !in_array($imageExtension, $validImageExtension) ){
-    echo
-    "
-    <script>
-      alert('Invalid Image Extension');
-    </script>
-    ";
-  }
-  else if($fileSize > 1000000){
-    echo
-    "
-    <script>
-      alert('Image Size Is Too Large');
-    </script>
-    ";
-  }
-  else{
-    $newImageName = uniqid();
-    $newImageName .= '.' . $imageExtension;
+if (isset($_POST["submit"])) {
+    $name = htmlspecialchars($_POST['name']);
+    $number = htmlspecialchars($_POST['number']);
+    $room_type = htmlspecialchars($_POST['room_type']);
+    $date = htmlspecialchars($_POST['date']);
 
-    move_uploaded_file($tmpName, 'admin/static/images/upload/' . $newImageName);
-    $register_query ="INSERT INTO room(name,number,room_type,image,date)VALUES('$name','$number','$room_type','$newImageName','$date')";
-    mysqli_query($db, $register_query);
-    echo
-  
-    "
-    <script>
-      alert('Successfully booking of the room');
-      document.location.href = 'dashboard.php';
-    </script>
-    ";
-  }
-}
+    if ($_FILES["image"]["error"] == UPLOAD_ERR_NO_FILE) {
+        echo "<script>alert('Please upload an ID image.');</script>";
+    } else {
+        $fileName = $_FILES["image"]["name"];
+        $fileSize = $_FILES["image"]["size"];
+        $tmpName = $_FILES["image"]["tmp_name"];
+
+        $validImageExtension = ['jpg', 'jpeg', 'png'];
+        $imageExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+
+        if (!in_array($imageExtension, $validImageExtension)) {
+            echo "<script>alert('Invalid Image Extension');</script>";
+        } else if ($fileSize > 1000000) {
+            echo "<script>alert('Image Size Is Too Large');</script>";
+        } else {
+            $newImageName = uniqid() . '.' . $imageExtension;
+
+            move_uploaded_file($tmpName, 'admin/static/images/upload/' . $newImageName);
+
+            // Use prepared statements or sanitize input to prevent SQL injection
+            $register_query = "INSERT INTO room(name, number, room_type, image, date) VALUES (?, ?, ?, ?, ?)";
+            $stmt = mysqli_prepare($db, $register_query);
+            mysqli_stmt_bind_param($stmt, "sssss", $name, $number, $room_type, $newImageName, $date);
+            mysqli_stmt_execute($stmt);
+
+            echo "<script>alert('Successfully booked the room'); document.location.href = 'dashboard.php';</script>";
+        }
+    }
 }
 
-//room booking
-if(isset($_post['bookbtn'])){
-  echo "button cicked";
-
+// Logic for 'bookbtn' (if needed)
+if (isset($_POST['bookbtn'])) {
+    echo "Button clicked";
 }
 
-ob_end_flush();
+ob_end_flush(); // Flush the output buffer
+
+
 ?>

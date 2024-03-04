@@ -1,7 +1,7 @@
 <?php
 include 'server.php';
 $team_name = $_SESSION['team_name'];
-$helpCode = $_SESSION['food_order_code'];
+$orderCode = $_SESSION['food_order_code'];
 // Get Location from IP Address using PHP
 // Use the IP Geolocation API to get the user’s location from IP using PHP.
 
@@ -82,23 +82,23 @@ include './components/header.php';
         
         <?php
         if( $_SESSION['team_id']){
-            $data_fetch_query = "SELECT request_status.helpID, request_status.ip_address, request_status.request_latitude, 
+            $data_fetch_query = "SELECT request_status.orderID, request_status.ip_address, request_status.request_latitude, 
             request_status.request_longitude, request_status.status, request_status.admNo, request_status.timestamp,
             users_details.firstname,users_details.lastname,users_details.regNum,
             delivery_team_tasks.food_order_code, delivery_team_tasks.delivery_team_id, delivery_team_tasks.team_status
              FROM ((request_status
              INNER JOIN users_details ON request_status.admNo = users_details.regNum)
-             INNER JOIN  delivery_team_tasks ON request_status.helpID =  delivery_team_tasks.food_order_code)
+             INNER JOIN  delivery_team_tasks ON request_status.orderID =  delivery_team_tasks.food_order_code)
              WHERE delivery_team_tasks.delivery_team_id = '".$_SESSION['team_id']."' AND delivery_team_tasks.team_status ='Assigned' ORDER BY timestamp DESC ";
              
             $data_result = mysqli_query($db, $data_fetch_query);
             if ($data_result->num_rows > 0){
                 while($row = $data_result->fetch_assoc()) {
                   $student_reg = $row["regNum"];
-                  $task_code = $row["helpID"];
+                  $task_code = $row["orderID"];
                   $_SESSION['food_order_code'] = $task_code;
              
-            echo "<tr> <td>" .$row["helpID"].  "</td>";
+            echo "<tr> <td>" .$row["orderID"].  "</td>";
             echo "<td>" .$row["regNum"]."</td>";
             echo "<td>" .$row["firstname"]." ".$row["lastname"]."</td>";
             echo "<td>" .$row["status"]."</td>";

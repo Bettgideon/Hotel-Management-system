@@ -45,7 +45,7 @@ $admin_id = $_SESSION['admin_id'];
         if ($data_result->num_rows > 0){
             while($row = $data_result->fetch_assoc()) {
 
-            $help_code=$row["orderID"];
+            $order_code=$row["orderID"];
             $request_status=$row["status"];
             $request_info=$row["food_description"];
             $request_report=$row["description"];
@@ -62,7 +62,7 @@ $admin_id = $_SESSION['admin_id'];
         
         <form method ='POST' action='server.php'>
 
-        <input type='submit' data-report='$request_report' data-info ='$request_info' data-status ='$request_status' data-phonenumber ='$tel' data-helpcode ='$help_code' data-name ='$name' value='View More Details' id='success_view' class='btn btn-info successful_task_view'>
+        <input type='submit' data-report='$request_report' data-info ='$request_info' data-status ='$request_status' data-phonenumber ='$tel' data-ordercode ='$order_code' data-name ='$name' value='View More Details' id='success_view' class='btn btn-info successful_task_view'>
         </form>
         </td> </tr>";
         }
@@ -101,7 +101,7 @@ $admin_id = $_SESSION['admin_id'];
         <form>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">order code:</label>
-            <input type="text" class="form-control" readonly id="student_HelpId">
+            <input type="text" class="form-control" readonly id="student_OrderId">
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Student Name:</label>

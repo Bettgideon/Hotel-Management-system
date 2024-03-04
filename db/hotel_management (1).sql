@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 01, 2024 at 12:42 PM
+-- Generation Time: Mar 04, 2024 at 12:45 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -73,7 +73,7 @@ CREATE TABLE `delivery_team` (
 --
 
 INSERT INTO `delivery_team` (`id`, `team_id`, `team_username`, `team_name`, `team_phone`, `team_email`, `team_password`, `password_reset_token`, `registration_timestamp`) VALUES
-(1, 'TM01', 'HYDRO/022', 'Team Hydro', 786378542, 'letsgo@gmail.com', 'ebcfd5a11d7cf5ba89f838fc766be7a4', NULL, '2022-04-04 11:21:26'),
+(1, 'TM01', 'HYDRO/022', 'Team Hydro', 786378542, 'letsgo@gmail.com', '4cb8e45bd18070ba7d3af01bd3f0f619', NULL, '2022-04-04 11:21:26'),
 (2, 'TM02', 'CUTY/022', 'Team Cuty', 742975635, 'blinxcorporation@gmail.com', 'ebcfd5a11d7cf5ba89f838fc766be7a4', NULL, '2022-04-04 11:21:26'),
 (3, 'TM03', 'SHIFTY/022', 'Team Shifty', 759753362, 'shifty@gmail.com', 'ebcfd5a11d7cf5ba89f838fc766be7a4', NULL, '2022-04-04 11:22:37'),
 (4, 'TM04', 'LIONS/022', 'The Lions', 785415289, 'masenolions@gmail.com', '86aa71c6832f46e2d79134fe3d5080b7', NULL, '2022-05-21 23:08:41');
@@ -171,12 +171,7 @@ CREATE TABLE `request_status` (
 --
 
 INSERT INTO `request_status` (`id`, `orderID`, `ip_address`, `request_latitude`, `request_longitude`, `status`, `food_type`, `manual_directions`, `food_description`, `admNo`, `timestamp`) VALUES
-(42, '99XPV9V', '192.107.70.4', '0', '0', 'Pending', 'sickness', 'werrettt', '', 'CIM/00069/021', '2024-03-01 04:40:30'),
-(33, 'D8FVMAT', '165.105.70.4', '-1.2920659', '36.8219462', 'Assigned', 'sickness', 'N/A', 'Having headache', 'CIM/00069/021', '2022-11-30 12:40:11'),
-(37, 'I01WV1J', '165.105.70.4', '-1.2920659', '36.8219462', 'Pending', 'other', 'N/A', '', 'CIM/00069/021', '2022-11-30 12:42:47'),
-(34, 'MA12HDS', '165.105.70.4', '-1.2920659', '36.8219462', 'Pending', 'accident', 'N/A', '', 'CIM/00069/021', '2022-11-30 12:41:44'),
-(41, 'QSAH78K', '192.107.70.4', '-1.2713984', '36.814848', 'Pending', 'sickness', 'N/A', 'tyyuuii', 'CIM/00069/021', '2024-02-29 15:35:24'),
-(40, 'R3KVHWH', '165.105.70.4', '0', '0', 'Pending', 'accident', 'Maseno GSQ', 'playing football', 'CIM/00069/021', '2022-11-30 12:48:47');
+(33, 'D8FVMAT', '165.105.70.4', '-1.2920659', '36.8219462', 'Assigned', 'snaks', 'N/A', 'with juice', 'CIM/00069/021', '2022-11-30 12:40:11');
 
 -- --------------------------------------------------------
 
@@ -213,6 +208,13 @@ CREATE TABLE `room` (
   `image` varchar(250) NOT NULL,
   `date` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`name`, `number`, `room_type`, `image`, `date`) VALUES
+('Kirigo Kipngeno', '0115532544', 'single', '65e200d0619d6.jpg', '2024-03-21 07:00:00.000000');
 
 -- --------------------------------------------------------
 
@@ -276,7 +278,7 @@ ALTER TABLE `delivery_team`
 ALTER TABLE `delivery_team_members`
   ADD PRIMARY KEY (`member_id`),
   ADD KEY `role_id` (`role_id`),
-  ADD KEY `delivery_team_id` (`delivery_team_id`) USING BTREE,
+  ADD KEY `rescue_team_id` (`delivery_team_id`) USING BTREE,
   ADD KEY `member_sno` (`id`);
 
 --
@@ -285,7 +287,7 @@ ALTER TABLE `delivery_team_members`
 ALTER TABLE `delivery_team_tasks`
   ADD PRIMARY KEY (`id`),
   ADD KEY `assigning_admin_id` (`assigning_admin_id`),
-  ADD KEY `delivery_team_id` (`delivery_team_id`),
+  ADD KEY `rescue_team_id` (`delivery_team_id`),
   ADD KEY `helpcode` (`food_order_code`);
 
 --
@@ -362,7 +364,7 @@ ALTER TABLE `failed_list`
 -- AUTO_INCREMENT for table `request_status`
 --
 ALTER TABLE `request_status`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `role_details`
@@ -391,7 +393,7 @@ ALTER TABLE `users_details`
 --
 ALTER TABLE `delivery_team_members`
   ADD CONSTRAINT `member_role` FOREIGN KEY (`role_id`) REFERENCES `role_details` (`role_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `delivery_team` FOREIGN KEY (`delivery_team_id`) REFERENCES `delivery_team` (`team_id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `rescue_team` FOREIGN KEY (`delivery_team_id`) REFERENCES `delivery_team` (`team_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `delivery_team_tasks`

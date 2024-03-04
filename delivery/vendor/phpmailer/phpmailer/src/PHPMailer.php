@@ -516,7 +516,7 @@ class PHPMailer
     /**
      * DKIM Extra signing headers.
      *
-     * @example ['List-Unsubscribe', 'List-Help']
+     * @example ['List-Unsubscribe', 'List-Order']
      *
      * @var array
      */

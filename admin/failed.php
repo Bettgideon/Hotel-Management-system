@@ -42,7 +42,7 @@ include 'server.php';
         if ($data_result->num_rows > 0){
             while($row = $data_result->fetch_assoc()) {
 
-            $help_code=$row["helpID"];
+            $order_code=$row["orderID"];
             $request_status=$row["status"];
             $incident_info=$row["description"];
             $request_status=$row["status"];
@@ -54,15 +54,15 @@ include 'server.php';
             $request_report=$row["description"];
 
        
-            echo "<tr> <td>" .$row["helpID"]."</td>";
+            echo "<tr> <td>" .$row["orderID"]."</td>";
             echo " <td>" .$row["firstname"]. " ".$row["lastname"]. "</td>";
 
             echo "<td>" .$row["timestamp"]."</td>";
         echo "<td>
         
         <form method ='POST' action='server.php'>
-        <input  type='text' hidden name='help_code' value='$help_code'>
-        <input type='submit' data-report='$request_report' data-info='$request_info' data-status ='$request_status' data-phonenumber='$tel' data-name='$name' data-helpcode='$help_code' value='View More Details' name='view-requests-being-attended-btn' class='btn btn-info view-failed-tasks-btn'>
+        <input  type='text' hidden name='order_code' value='$order_code'>
+        <input type='submit' data-report='$request_report' data-info='$request_info' data-status ='$request_status' data-phonenumber='$tel' data-name='$name' data-ordercode='$order_code' value='View More Details' name='view-requests-being-attended-btn' class='btn btn-info view-failed-tasks-btn'>
         </form>
         </td> </tr>";
         }
@@ -101,7 +101,7 @@ include 'server.php';
         <form>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">order Code:</label>
-            <input type="text" class="form-control" readonly id="student_HelpId">
+            <input type="text" class="form-control" readonly id="student_orderId">
           </div>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label"> Name:</label>

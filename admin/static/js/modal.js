@@ -6,7 +6,7 @@ let buttons = document.querySelectorAll(".taskViewButton");
 buttons.forEach(function (button) {
   button.addEventListener("click", function (e) {
     e.preventDefault();
-    let helpcode = button.dataset.helpcode;
+    let ordercode = button.dataset.ordercode;
     let student_name = button.dataset.name;
     let student_phone = button.dataset.phone;
     let request_status = button.dataset.status;
@@ -14,7 +14,7 @@ buttons.forEach(function (button) {
     let adminName = button.dataset.adminname;
     let requestDescription = button.dataset.description;
 
-    document.getElementById("sHelpCode").value = helpcode;
+    document.getElementById("sOrderCode").value = ordercode;
     document.getElementById("sName").value = student_name;
     document.getElementById("sPhone").value = student_phone;
     document.getElementById("sRequestStatus").value = request_status;
@@ -32,11 +32,11 @@ let elements = document.querySelectorAll(".team_change_button");
 elements.forEach(function (element) {
   element.addEventListener("click", function (e) {
     e.preventDefault();
-    let orderID = element.dataset.helpcode;
+    let orderID = element.dataset.ordercodecode;
     let previousTeam = element.dataset.previous_team;
     let adminId = element.dataset.adminidentity;
 
-    document.getElementById("request_helpcode").value = orderID;
+    document.getElementById("request_ordercode").value = orderID;
     document.getElementById("previous_team").value = previousTeam;
     document.getElementById("admin_identity_no").value = adminId;
 
@@ -51,8 +51,8 @@ let btns = document.querySelectorAll(".successful_task_view");
 btns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
     e.preventDefault();
-    let orderID = btn.dataset.helpcode;
-    document.getElementById("student_HelpId").value = orderID;
+    let orderID = btn.dataset.ordercodecode;
+    document.getElementById("student_OrderId").value = orderID;
 
     let sname = btn.dataset.name;
     document.getElementById("student-name").value = sname;
@@ -81,8 +81,8 @@ Buttons.forEach(function (Button) {
   Button.addEventListener("click", function (e) {
     e.preventDefault();
 
-    let orderID = Button.dataset.helpcode;
-    document.getElementById("student_HelpId").value = orderID;
+    let orderID = Button.dataset.ordercode;
+    document.getElementById("student_OrderId").value = orderID;
 
     let sname = Button.dataset.name;
     document.getElementById("student-name").value = sname;

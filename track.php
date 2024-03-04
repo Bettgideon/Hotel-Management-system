@@ -2,7 +2,7 @@
 include 'server.php';
 //Search Button
 if(isset($_POST['search-button'])){
-  $orderID = $_POST['searched_help_code'];
+  $orderID = $_POST['searched_order_code'];
 
   $data_fetch_query = "SELECT * FROM `request_status` WHERE orderID='$orderID' ";
  
@@ -72,7 +72,7 @@ include './components/header.php';
   <div class="col-md-4"></div>
   <div class="col-md-4">
   <form class="form-inline my-2 my-lg-0" method="POST" action="">
-<input class="form-control mr-sm-2" type="search" name='searched_help_code' placeholder="Enter order code" aria-label="Search">
+<input class="form-control mr-sm-2" type="search" name='searched_order_code' placeholder="Enter order code" aria-label="Search">
 
 <button type="submit" name='search-button' class="btn btn-primary">Search</button>
 </form>

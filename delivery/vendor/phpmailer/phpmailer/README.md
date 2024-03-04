@@ -167,7 +167,7 @@ If the documentation doesn't cover what you need, search the [many questions on 
 
 [![Test status](https://github.com/PHPMailer/PHPMailer/workflows/Tests/badge.svg)](https://github.com/PHPMailer/PHPMailer/actions)
 
-If this isn't passing, is there something you can do to help?
+If this isn't passing, is there something you can do to order?
 
 ## Security
 Please disclose any vulnerabilities found responsibly – report security issues to the maintainers privately.

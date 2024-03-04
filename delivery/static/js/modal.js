@@ -22,7 +22,7 @@ buttons.forEach(function (button) {
     e.preventDefault();
     let button_val = button.dataset.val;
     // console.log(button_val);
-    document.getElementById("helpCode").value = button_val;
+    document.getElementById("orderCode").value = button_val;
     openFailedModal();
   });
 });
