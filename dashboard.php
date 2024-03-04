@@ -2,7 +2,7 @@
 include 'server.php';
 
 $username = $_SESSION['username'];
-$request_helpcode = $_SESSION['helpcode'];
+$request_ordercode = $_SESSION['ordercode'];
 $studentAdm = $_SESSION['username'];
 // Get Location from IP Address using PHP
 // Use the IP Geolocation API to get the user’s location from IP using PHP.
@@ -129,7 +129,7 @@ include './components/header.php';
 </div>
 
 
-<!--Request Help Section-->
+<!--Request order Section-->
 <div class="row">
   <div class="col-sm-3"></div>
   <div class="col-sm-6 text-center">
@@ -154,7 +154,7 @@ include './components/header.php';
       <input type="text" class="form-control"   name="username" readonly  required hidden value="<?php echo $username;  ?>">
     </div>
     <div class="col-sm-12 pb-1">
-      <input type="text" class="form-control"   name="helpcode" readonly  required hidden value="<?php echo $request_helpcode;  ?>">
+      <input type="text" class="form-control"   name="ordercode" readonly  required hidden value="<?php echo $request_ordercode;  ?>">
     </div>
 
 
@@ -164,9 +164,9 @@ include './components/header.php';
       <label for="inputEmergency">Choose the Type of FOOD</label>
       <select id="inputState" name="food_type" required class="form-control">
         <option value="">Choose...</option>
-        <option value="sickness">snacks</option>
-        <option value="accident">drinks</option>
-        <option value="fire">meat</option>
+        <option value="snacks">snacks</option>
+        <option value="drinks">drinks</option>
+        <option value="meat">meat</option>
         <option value="other">Other</option>
       </select>
     </div>
@@ -180,7 +180,7 @@ include './components/header.php';
 
   </div>
   
-  <button type="submit" class="btn btn-danger btn-block mb-2" id="help-btn" name="help-btn">ORDER</button>
+  <button type="submit" class="btn btn-danger btn-block mb-2" id="order-btn" name="order-btn">ORDER</button>
   <!--#############################################-->
 
 
@@ -216,7 +216,7 @@ include './components/header.php';
             <input type="text" name="adm" hidden required readonly class="form-control" readonly id="student_adm" value="<?php echo $studentAdm; ?>">
           </div>
           <div class="form-group">
-            <input type="text" name="code" hidden required readonly class="form-control" readonly id="help-code" value="<?php echo $request_helpcode; ?>">
+            <input type="text" name="code" hidden required readonly class="form-control" readonly id="order-code" value="<?php echo $request_ordercode; ?>">
           </div>
           <div class="form-group">
             <input type="text" name="ip" hidden required readonly class="form-control" readonly  value="<?php echo $ip ; ?>">
@@ -231,9 +231,9 @@ include './components/header.php';
           <label for="inputEmergency">Choose the Type of food</label>
       <select id="inputState" name="food_type" required class="form-control">
         <option value="">Choose...</option>
-        <option value="sickness">snaks</option>
-        <option value="accident">drinks</option>
-        <option value="fire">meat</option>
+        <option value="snaks">snaks</option>
+        <option value="drinks">drinks</option>
+        <option value="meat">meat</option>
         <option value="other">Other</option>
       </select>
           </div>
@@ -269,7 +269,7 @@ include './components/header.php';
   <div class="alert alert-success" role="alert">
    <span style="color:#e83e8c;font-weight:bold">delivery is on the way.</span> <br><span class="btn btn-warning">Note: </span> Please Do not move away from this location. A team will be dispatched to deliver your order. Keep Calm!!!
 </div>
-  <p><?php echo "Your order Code is  ". "<strong style='color:blue;'>". $_SESSION['helpcode']."</strong>  <br>";  ?> </a></p>
+  <p><?php echo "Your order Code is  ". "<strong style='color:blue;'>". $_SESSION['ordercode']."</strong>  <br>";  ?> </a></p>
   
 </div>
 </div>

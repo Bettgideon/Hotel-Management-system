@@ -64,7 +64,7 @@ function getCurrentLocationHandler(e) {
 getCurrentLocationHandler();
 // //fetch Locations after assigning them to divs
 
-document.getElementById("help-btn").addEventListener("click", function (e) {
+document.getElementById("order-btn").addEventListener("click", function (e) {
   let Latitude = document.querySelector(".student-latitude").value;
   let Longitude = document.querySelector(".student-longitude").value;
 

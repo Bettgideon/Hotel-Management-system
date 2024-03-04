@@ -67,7 +67,7 @@ if (isset($_POST['admin_login_btn'])) {
 
     
 //function to send notifications
-function  send_notification_email($request_helpcode,$teamName,$teamMail){
+function  send_notification_email($request_ordercode,$teamName,$teamMail){
   // $token_key = 'token';
   // $encrypted_token_key = sha1($token_key);
   //Create an instance; passing `true` enables exceptions
@@ -96,14 +96,14 @@ function  send_notification_email($request_helpcode,$teamName,$teamMail){
   $mail->isHTML(true);                                  //Set email format to HTML
   $mail->Subject = 'New Emergency Assignment.!!';
 
-  // <h3>If you are the one who initiated this process please <a href='http://localhost/maseno-E-help/password-change.php?token=$token' style='font-weight:bold;'>Click Here</a> to RESET your password, else IGNORE this Email.</h3>
+  // <h3>If you are the one who initiated this process please <a href='http://localhost/maseno-E-order/password-change.php?token=$token' style='font-weight:bold;'>Click Here</a> to RESET your password, else IGNORE this Email.</h3>
 $email_template = "
 <html>
 <body style='background:rgb(216, 210, 210);padding:2%'>
 <h2 style='color:black;'>Hello, $teamName</h2>
 <h2>A new emergency response task has been assigned to you. </h3>
-<h2>The Request Help delivery team is <strong style='color:red'>$request_helpcode</strong>.</h3>
-<h3>Please Log into your portal immediately, <a href='https://rescueteam-maseno.blinx.co.ke/'><strong style='color:blue'>delivery team Portal</strong></a></h3>
+<h2>The Request order delivery team is <strong style='color:red'>$request_ordercode</strong>.</h3>
+<h3>Please Log into your portal immediately, <a href='https://deliveryteam-maseno.blinx.co.ke/'><strong style='color:blue'>delivery team Portal</strong></a></h3>
 <br>
 <img src='https://www.maseno.ac.ke/sites/default/files/Maseno-logo_v5.png' alt=''>
 </body>
@@ -117,11 +117,11 @@ $email_template = "
 }
     // delivery team Assignment
     if (isset($_POST['update-team-btn'])) {
-      $request_helpcode = $_POST['studentHelpCode'];
+      $request_ordercode = $_POST['studentOrderCode'];
       $moderator_id = $_POST['moderatorID'];
       $selected_team_id = $_POST['team'];
 
-      if (empty($request_helpcode)) {
+      if (empty($request_ordercode)) {
         array_push($errors, "delivery team is required");
       }
       if (empty($moderator_id)) {
@@ -135,10 +135,10 @@ $email_template = "
       if (count($errors) == 0) {
         $insert_query = "INSERT INTO `delivery_team_tasks`(`food_order_code`,`assigning_admin_id`,
          `team_status`,`delivry_team_id`)
-         VALUES ('$request_helpcode','$moderator_id','Assigned','$selected_team_id')";
+         VALUES ('$request_ordercode','$moderator_id','Assigned','$selected_team_id')";
         $fetch_results = mysqli_query($db, $insert_query);
 
-        $status_update_query ="UPDATE `request_status` SET `status`='Assigned' WHERE `orderID` = '$request_helpcode'  ";
+        $status_update_query ="UPDATE `request_status` SET `status`='Assigned' WHERE `orderID` = '$request_ordercode'  ";
         $request_update_results = mysqli_query($db, $status_update_query);
 
         $team_data_fetch = "SELECT * from delivery_team WHERE `team_id` = '$selected_team_id' ";
@@ -169,7 +169,7 @@ $email_template = "
         $result = curl_exec($ch);
         // echo $result;
 
-        // send_notification_email($request_helpcode,$teamName,$teamMail);
+        // send_notification_email($request_ordercode,$teamName,$teamMail);
           header('location: assigned.php');
         }else{
           array_push($errors, "Unable to fetch data");
@@ -179,9 +179,9 @@ $email_template = "
     
 // delivery team Re-Assignment
 if (isset($_POST['reassign-btn'])) {
-  $request_help_code = $_POST['help_code_2'];
+  $request_order_code = $_POST['order_code_2'];
   
-  if (empty($request_help_code)) {
+  if (empty($request_order_code)) {
     array_push($errors, "delivery team is missing");
   }
 
@@ -191,7 +191,7 @@ if (isset($_POST['reassign-btn'])) {
     FROM request_status 
     INNER JOIN delivery_team_tasks ON request_status.orderID = delivery_team_tasks.food_order_code
     INNER JOIN users_details ON request_status.admNo = users_details.regNum
-    WHERE request_status.orderID = '$request_help_code'";
+    WHERE request_status.orderID = '$request_order_code'";
   
 
   $fetch_results = mysqli_query($db, $select_query);
@@ -202,7 +202,7 @@ if (isset($_POST['reassign-btn'])) {
           $student_fname=$row['firstname'];
           $student_lname=$row['lastname'];
           $student_phone=$row['phonenumber'];
-          $request_helpcode=$row['orderID'];
+          $request_ordercode=$row['orderID'];
           $team_status=$row['team_status'];
           $team_assignment_time=$row['assignment_time'];
 
@@ -210,7 +210,7 @@ if (isset($_POST['reassign-btn'])) {
           $_SESSION['fname'] = $student_fname;
           $_SESSION['lname'] =$student_lname;
           $_SESSION['phone'] = $student_phone;
-          $_SESSION['orderID'] =$request_helpcode;
+          $_SESSION['orderID'] =$request_ordercode;
           $_SESSION['team_status'] =$team_status;
           $_SESSION['team_assignment_time'] =$team_assignment_time;
 
@@ -225,7 +225,7 @@ if (isset($_POST['reassign-btn'])) {
 // Update delivery team Assignment
 if (isset($_POST['reassign-team-btn'])) {
   $selected_team_id = $_POST['team'];
-  $request_code = $_POST['helpCode'];
+  $request_code = $_POST['orderCode'];
   $moderator_id = $_POST['adminIdentity'];
 
   if (empty($selected_team_id)) {
@@ -259,9 +259,9 @@ if (isset($_POST['reassign-team-btn'])) {
   }
     // Viewing Requests Being Responded to.
     if (isset($_POST['view-requests-being-attended-btn'])) {
-      $request_helpcode = $_POST['help_code'];
+      $request_ordercode = $_POST['order_code'];
    
-      if (empty($request_helpcode)) {
+      if (empty($request_ordercode)) {
         array_push($errors, "This request lacks a delivery team");
       }
     
@@ -273,7 +273,7 @@ if (isset($_POST['reassign-team-btn'])) {
         INNER JOIN users_details ON request_status.admNo = users_details.regNum)
         INNER JOIN delivery_team_tasks ON request_status.orderID = delivery_team_tasks.food_order_code)
         INNER JOIN failed_list ON request_status.orderID = failed_list.users_ordercode)
-        WHERE request_status.orderID = '$request_helpcode'";
+        WHERE request_status.orderID = '$request_ordercode'";
         
     
         $fetch_results = mysqli_query($db, $fetch_query);
@@ -284,7 +284,7 @@ if (isset($_POST['reassign-team-btn'])) {
           $student_fname=$row['firstname'];
           $student_lname=$row['lastname'];
           $student_phone=$row['phonenumber'];
-          $request_helpcode=$row['orderID'];
+          $request_ordercode=$row['orderID'];
           $request_status=$row['status'];
           $team_id = $row['delivery_team_id'];
           $request_time=$row['timestamp'];
@@ -295,7 +295,7 @@ if (isset($_POST['reassign-team-btn'])) {
           $_SESSION['firstname'] = $student_fname;
           $_SESSION['lastname'] =$student_lname;
           $_SESSION['phonenumber'] = $student_phone;
-          $_SESSION['request_helpcode'] =$request_helpcode;
+          $_SESSION['request_ordercode'] =$request_ordercode;
           $_SESSION['teamID'] = $team_id;
           $_SESSION['request_status'] =$request_status;
           $_SESSION['description'] =$emergency_desc;

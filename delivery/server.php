@@ -73,7 +73,7 @@ if (isset($_POST['view-task-btn'])) {
  
 
   if (empty($task_code)) {
-  	array_push($errors, "Help ID is required");
+  	array_push($errors, "ORDER ID is required");
   }
   if (empty($student_reg)) {
   	array_push($errors, "Student ADM No. is required");
@@ -88,7 +88,7 @@ $row = mysqli_fetch_assoc($select_results);
   
     // end generate random alphanumeric character
       //row data
-      $help_id=$row['orderID'];
+      $order_id=$row['orderID'];
       $ip_address=$row['ip_address'];
       $latitude=$row['request_latitude'];
       $longitude=$row['request_longitude'];
@@ -104,7 +104,7 @@ $row = mysqli_fetch_assoc($select_results);
       $student_adm=$row['admNo'];
       $time_of_request=$row['timestamp'];
       //sessions
-      $_SESSION['orderID'] = $help_id;
+      $_SESSION['orderID'] = $order_id;
       $_SESSION['ip_address'] =$ip_address;
       $_SESSION['request_latitude'] = $latitude;
       $_SESSION['request_longitude'] =$longitude;
@@ -195,10 +195,10 @@ if (isset($_POST['view-map-btn'])) {
 
 // Updating Successful Requests.
 if (isset($_POST['success-task-btn'])) {
-$help_code = $_POST['task_code'];
+$order_code = $_POST['task_code'];
 $description = $_POST['incident_desc'];
 
-  if (empty($help_code)) {
+  if (empty($order_code)) {
   	array_push($errors, "delivery team is required");
   }
   if (empty($description)) {
@@ -206,13 +206,13 @@ $description = $_POST['incident_desc'];
   }
   if (count($errors) == 0) {
 
-    $status_update_query ="UPDATE `request_status` SET `status`='Successful' WHERE `orderID`= '$help_code'";
+    $status_update_query ="UPDATE `request_status` SET `status`='Successful' WHERE `orderID`= '$order_code'";
     $status_results = mysqli_query($db,$status_update_query);
 
-    $update_query ="UPDATE `delivery_team_tasks` SET `team_status`='Successful' WHERE `food_order_code`='$help_code'";
+    $update_query ="UPDATE `delivery_team_tasks` SET `team_status`='Successful' WHERE `food_order_code`='$order_code'";
     $results_update = mysqli_query($db, $update_query);
 
-    $success_list_query ="INSERT INTO `success-list`(`users_ordercode`, `description`) VALUES ('$help_code','$description')";
+    $success_list_query ="INSERT INTO `success-list`(`users_ordercode`, `description`) VALUES ('$order_code','$description')";
     $success_list_update = mysqli_query($db, $success_list_query);
   	  header('location: dashboard.php');
   	}else{
@@ -222,10 +222,10 @@ $description = $_POST['incident_desc'];
   }
 // Updating Failed Requests
 if (isset($_POST['failed-task-btn'])) {
-  $help_code = $_POST['task_code'];
+  $order_code = $_POST['task_code'];
   $description = $_POST['incident_desc'];
   
-    if (empty($help_code)) {
+    if (empty($order_code)) {
       array_push($errors, "delivery team is required");
     }
     if (empty($description)) {
@@ -233,13 +233,13 @@ if (isset($_POST['failed-task-btn'])) {
     }
     if (count($errors) == 0) {
   
-      $failed_update_query ="UPDATE `request_status` SET `status`='Failed' WHERE `orderID`= '$help_code'";
+      $failed_update_query ="UPDATE `request_status` SET `status`='Failed' WHERE `orderID`= '$order_code'";
       $result = mysqli_query($db,$failed_update_query);
   
-      $failed_query ="UPDATE `delivery_team_tasks` SET `team_status`='Failed' WHERE `food_order_code`='$help_code'";
+      $failed_query ="UPDATE `delivery_team_tasks` SET `team_status`='Failed' WHERE `food_order_code`='$order_code'";
       $failed_result = mysqli_query($db, $failed_query);
 
-      $failed_list_query ="INSERT INTO `failed-list`(`users_ordercode`, `description`) VALUES ('$help_code','$description')";
+      $failed_list_query ="INSERT INTO `failed-list`(`users_ordercode`, `description`) VALUES ('$order_code','$description')";
       $failed_list_update = mysqli_query($db, $failed_list_query);
 
         header('location: dashboard.php');
@@ -279,7 +279,7 @@ function send_password_reset($delivery_name,$delivery_email,$token){
   $mail->isHTML(true);                                  //Set email format to HTML
   $mail->Subject = 'Reset Password Notification';
 
-  // <h3>If you are the one who initiated this process please <a href='http://localhost/maseno-E-help/password-change.php?token=$token' style='font-weight:bold;'>Click Here</a> to RESET your password, else IGNORE this Email.</h3>
+  // <h3>If you are the one who initiated this process please <a href='http://localhost/maseno-E-order/password-change.php?token=$token' style='font-weight:bold;'>Click Here</a> to RESET your password, else IGNORE this Email.</h3>
 $email_template = "
 <html>
 <body style='background:rgb(216, 210, 210);'>
