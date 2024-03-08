@@ -4,7 +4,7 @@ include 'server.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Student | Registration</title>
+  <title>User | Registration</title>
   <?php
 include './components/header.php';
 ?>
@@ -16,19 +16,12 @@ include './components/header.php';
         <div class="col-md-6 mt-5 register-page">
           <div class="col-md-12 mb-2 register-page-header">
             <h2 class="text-center" style="color: #fff">
-              Maseno Emergency Student Registration Form
+             Hotel Management Information System Registration Form
             </h2>
 
             <div class="row">
               <div class="col-md-3"></div>
-              <div class="col-md-6 text-center">
-                <img
-                  src="./static/img/logo.png"
-                  class="img-fluid"
-                  height="100"
-                  width="100"
-                />
-              </div>
+             
               <div class="col-md-3"></div>
             </div>
           </div>
@@ -47,7 +40,7 @@ include './components/header.php';
                   type="text"
                   class="form-control"
                   id="inputEmail4"
-                  placeholder="e.g BA/00020/012"
+                  placeholder="e.g CIM/00020/021"
                   name="regno"
                   required
                 />
@@ -107,7 +100,7 @@ include './components/header.php';
                   type="number"
                   class="form-control"
                   id="inputEmail11"
-                  placeholder="071234...."
+                  placeholder="071034...."
                   name="phone"
                   required
                 />

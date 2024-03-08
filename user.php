@@ -1,78 +1,106 @@
- <?php
-include 'server.php';
-?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Student | Login</title>
-  <?php
-include './components/header.php';
-?>
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management Information System | Login</title>
+    <?php include './components/header.php'; ?>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d2d6de;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-<body style="background-color: #d2d6de;">
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
     <div class="container">
-
-        <div class="row mt-5 login-page-row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 mt-5 login-page">
-
-                <div class="col-md-12 mb-2 login-page-header">
-                    <h2 class="text-center" style="color: #fff">Hotel management system</h2>
-
-                    <div class="row">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6 text-center">
-                            <img src="./static/img/logo.png" class="img-fluid" height="100" width="100" />
-                        </div>
-                        <div class="col-md-3"></div>
-                    </div>
-                </div>
-
-
-                <form method="post" action="server.php" enctype="multipart/form-data" class="login-form">
-                    <div class="form-group row">
-                        <?php
-            include 'errors.php';
-            ?>
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Username</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputEmail3" placeholder="e.g BAS/00025/019" name="regno"
-                                required />
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
-                        <div class="col-sm-9">
-                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password"
-                                name="password" required />
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                    <div class="col-sm-4 mb-2">
-                            <a name="forgot_password_btn" class="btn-block p-2 text-success" href="forgot-password.php" style="text-decoration:none ;">
-                               Forgot Password ?
-                            </a>
-                        </div>
-                        <div class="col-sm-4"></div>
-                        <div class="col-sm-4">
-                            <button type="submit" name="login_btn" class="btn btn-primary btn-block p-2">
-                              <strong>  Sign In</strong>
-                            </button>
-                        </div>
-                    </div>
-
-                </form>
+        <header>
+            <h1>Welcome to Hotel Management Information System</h1>
+            <div class="row">
+                <div class="col-md-3"></div>
+              
+                <div class="col-md-3"></div>
             </div>
-        </div>
+        </header>
+        <form method="post" action="server.php" enctype="multipart/form-data" class="login-form">
+            <div class="form-group">
+                <?php include 'errors.php'; ?>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="regno" placeholder="e.g CIM/00024/021" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" name="login_btn">Sign In</button>
+            <div class="forgot-password">
+                <a name="forgot_password_btn" href="forgot-password.php">Forgot Password?</a>
+            </div>
+        </form>
     </div>
-
-    <!-- Optional JavaScript -->
-  <?php 
-  include 'components/scripts.php';
-  ?>
-
+    <?php include 'components/scripts.php'; ?>
 </body>
-
 </html>

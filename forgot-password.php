@@ -41,9 +41,7 @@ if(isset($_SESSION['email_status']))
 
                     <div class="row">
                         <div class="col-md-3"></div>
-                        <div class="col-md-6 text-center">
-                            <img src="./static/img/logo.png" class="img-fluid" height="100" width="100" />
-                        </div>
+                        
                         <div class="col-md-3"></div>
                     </div>
                 </div>
@@ -56,7 +54,7 @@ if(isset($_SESSION['email_status']))
                  <div class="form-group row">      
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Username</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputEmail3" placeholder="e.g BA/0001/014" name="student_username"
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="e.g CIM/0001/021" name="student_username"
                                 required />
                         </div>
                     </div>
