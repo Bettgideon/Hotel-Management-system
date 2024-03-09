@@ -55,7 +55,7 @@ if(isset($_POST['search-button'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>order | Tracking</title>
+  <title>Order | Tracking</title>
   <?php
 include './components/header.php';
 ?>
@@ -95,7 +95,7 @@ include './components/header.php';
   <caption>List order requests made by <?php  echo  $_SESSION['firstname'].' '. $_SESSION['lastname']; ?></caption>
 
   <thead>
-      <h3>order Requests</h3>
+      <h3>Order Requests</h3>
       
     <tr class='bg-primary'>
       <th scope="col">order Code</th>

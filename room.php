@@ -4,6 +4,105 @@ include 'server.php';
 
 <!DOCTYPE html>
 <html lang="en">
+<style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        .class-home {
+            font-size: 18px; /* Adjust the font size as needed */
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .class-home:hover {
+            background-color: #0056b3;
+        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.read {
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 300px;
+    position: relative; /* Add position relative to make position absolute work */
+}
+
+.read img {
+    width: 100%;
+    height: auto;
+}
+
+.read-text {
+    padding: 20px;
+    position: relative; /* Add position relative */
+}
+
+.read-text h5 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.read-text p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #666;
+}
+
+.discount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.discount span {
+    font-weight: bold;
+}
+
+.book-btn {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color:#2be307;
+}
+
+    </style>
   <head>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
@@ -23,7 +122,7 @@ include 'server.php';
               <!-- HEADER -->
     <header class ="d-flex flex-row justify-content-between p-4">
       <span class="landingpage-header-logo p-2">
-          HOTELFRENZ
+         Hotel Management Information System
       </span>
       <nav class="">
         <ul class="nav justify-content-end">
@@ -64,26 +163,27 @@ include 'server.php';
               you live in the moment,Come ans experience magic... Make a wish
            </p>
    </div>
-      <div class="cards">
-          <div class="read">
-              <img src=".\static\css\roomcss\roompics\img\bed1.jpg" alt="">
-              <div class="read-text">
-                <div>
-                   <h5>Deluxe Room</h5>
-                   <p>N150,000/night</p>
-                  </div>
-                  <div class="book"><a href="#">5%discount</a></div>
-              </div>
-          </div>
+   <div class="cards">
+        <div class="read">
+            <img src=".\static\css\roomcss\roompics\img\bed1.jpg" alt="">
+            <div class="read-text">
+                <h5>Deluxe Room</h5>
+                <p>Ksh50,000/night</p>
+                <div class="book">
+                <a href="#">5%discount</a><br><br><br><br>
+                    <a href="booking.php" class="book-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
           <div class="read">
               <img src=".\static\css\roomcss\roompics\img\bed2.jpg" alt="">
               <div class="read-text">
                   <div>
                      <h5>Single room</h5>
-                     <p>N80,000/night</p>
+                     <p>Ksh80,000/night</p>
                     </div>
-                  <div class="book"><a href="#">5%discount</a></div>
-                    
+                  <div class="book"><a href="#">5%discount</a></div><br><br><br><br>
+                  <a href="booking.php" class="book-btn">Book Now</a>
                 </div>
           </div>
           <div class="read">
@@ -91,9 +191,10 @@ include 'server.php';
               <div class="read-text">
                   <div>
                      <h5>Double Room</h5>
-                     <p>N120,000/night</p>
+                     <p>Ksh20,000/night</p>
                     </div>
-                    <div class="book"><a href="#">5%discount</a></div>
+                    <div class="book"><a href="#">5%discount</a></div><br><br><br><br>
+                    <a href="booking.php" class="book-btn">Book Now</a>
                 </div>
           </div>
           <div class="read">
@@ -101,9 +202,10 @@ include 'server.php';
               <div class="read-text">
                   <div>
                      <h5>Child Room</h5>
-                     <p>N140,000/night</p>
+                     <p>Ksh140,000/night</p>
                     </div>
                     <div class="book"><a href="#">5%discount</a></div>
+                    <a href="booking.php" class="book-btn">Book Now</a><br><br><br><br>
                 </div>
           </div>
           <div class="read">
@@ -111,9 +213,10 @@ include 'server.php';
               <div class="read-text">
                   <div>
                      <h5>Couple Room</h5>
-                     <p>N120,000/night</p>
+                     <p>Ksh120,000/night</p>
                     </div>
                     <div class="book"><a href="#">5%discount</a></div>
+                    <a href="booking.php" class="book-btn">Book Now</a><br><br><br><br>
                 </div>
           </div>
           <div class="read">
@@ -121,9 +224,10 @@ include 'server.php';
               <div class="read-text">
                   <div>
                      <h5>Elegant Room</h5>
-                     <p>N140,000/night</p>
+                     <p>Ksh140,000/night</p>
                     </div>
-                    <div class="book"><a href="#">2.5%discount</a></div>
+                    <div class="book"><a href="#">2.5%discount</a></div><br><br><br><br>
+                    <a href="booking.php" class="book-btn">Book Now</a>
                 </div>
           </div>
           <div class="read">
@@ -131,9 +235,10 @@ include 'server.php';
               <div class="read-text">
                   <div>
                      <h5>Personal Room</h5>
-                     <p>N80,000/night</p>
+                     <p>Ksh80,000/night</p>
                     </div>
-                    <div class="book"><a href="#">5%discount</a></div>
+                    <div class="book"><a href="#">5%discount</a></div><br><br><br><br>
+                    <a href="booking.php" class="book-btn">Book Now</a>
                 </div>
           </div>
        <div class="read">
@@ -141,15 +246,16 @@ include 'server.php';
               <div class="read-text">
                   <div>
                      <h5>Presidential Room</h5>
-                     <p>N300,000/night</p>
+                     <p>Ksh300,000/night</p>
                   </div>
-                   <div class="book"><a href="#">25%discount</a></div>
+                   <div class="book"><a href="#">25%discount</a></div><br><br><br><br>
+                   <a href="booking.php" class="book-btn">Book Now</a>
                 </div>
           </div>
       </div>
       <section id="book-session">
 		<div class="book">
-   			         <a href="booking.php" class="book_btn ">Book A room</a>
+    <a href="booking.php" class="book-btn">Book Now</a>
 		</section>
 
 </body>

@@ -164,9 +164,9 @@ include './components/header.php';
       <label for="inputEmergency">Choose the Type of FOOD</label>
       <select id="inputState" name="food_type" required class="form-control">
         <option value="">Choose...</option>
-        <option value="snacks">snacks</option>
-        <option value="drinks">drinks</option>
-        <option value="meat">meat</option>
+        <option value="Snacks (Cost Varies)">Snacks (Cost Varies)</option>
+        <option value="Drinks (Ksh 600 per grate)">Drinks (Ksh 600 per grate)</option>
+        <option value="Meat (Ksh 500 per person)">Meat (Ksh 500 per person)</option>
         <option value="other">Other</option>
       </select>
     </div>
@@ -231,9 +231,9 @@ include './components/header.php';
           <label for="inputEmergency">Choose the Type of food</label>
       <select id="inputState" name="food_type" required class="form-control">
         <option value="">Choose...</option>
-        <option value="snaks">snaks</option>
-        <option value="drinks">drinks</option>
-        <option value="meat">meat</option>
+        <option value="Snacks">Snacks</option>
+        <option value="Drinks">Drinks</option>
+        <option value="Meat">Meat</option>
         <option value="other">Other</option>
       </select>
           </div>
