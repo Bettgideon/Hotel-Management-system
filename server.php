@@ -228,15 +228,14 @@ if(isset($_POST['manual-direction-btn'])){
   // if (empty($lat)) { array_push($errors, "Latitude is needed"); }
   // if (empty($long)) { array_push($errors, "Longitude is required"); }
   if (empty($ip)) { array_push($errors, "IP Address is needed"); }
-  if (empty($foodType)) { array_push($errors, "Emergency Type is needed"); }
+  if (empty($foodType)) { array_push($errors, "Food Type is needed"); }
   if (empty($incident_directions)) { array_push($errors, "Directions are needed"); }
 
   if (count($errors) == 0) {
-    $data_update= "INSERT INTO `request_status`(`orderID`, `ip_address`, `request_latitude`, `request_longitude`, `food_type`, `manual_directions`, `food_description`, `admNo`)
-     VALUES ('$orderID','$ip','$lat','$long','$foodtype','$incident_directions','$description','$adm')";
-    $result = mysqli_query($db, $data_update);
+    $data_update = "INSERT INTO `request_status`(`orderID`, `ip_address`, `request_latitude`, `request_longitude`, `food_type`, `manual_directions`, `food_description`, `admNo`)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 //Select data from location table
-$location_Select_query = "SELECT * FROM request_status WHERE `orderID`='$orderID' ";
+$location_Select_query = "SELECT * FROM request_status WHERE `orderID` = ?";
 $results = mysqli_query($db, $location_Select_query);
 if (mysqli_num_rows($results) == 1) {
   $row = mysqli_fetch_assoc($results);

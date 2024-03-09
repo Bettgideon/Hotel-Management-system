@@ -24,7 +24,7 @@ $admin_id = $_SESSION['admin_id'];
                                 <th scope="col" class="table-primary">Name</th>
                                 <th scope="col" class="table-primary">Number</th>
                                 <th scope="col" class="table-primary">Room Type</th>
-                                <th scope="col" class="table-primary">Image</th>
+                                
                                 <th scope="col" class="table-primary">Date</th>
                             </tr>
                         </thead>
@@ -32,7 +32,7 @@ $admin_id = $_SESSION['admin_id'];
 
                         <?php
                         if ($admin_id) {
-                            $data_fetch_query = "SELECT name, number, room_type, image, date FROM room";
+                            $data_fetch_query = "SELECT name, number, room_type, date FROM room";
                             $data_result = mysqli_query($db, $data_fetch_query);
 
                             if ($data_result->num_rows > 0) {
@@ -46,8 +46,6 @@ $admin_id = $_SESSION['admin_id'];
                                             <td>" . $name . "</td>
                                             <td>" . $number . "</td>
                                             <td>" . $room_type . "</td>
-                                            <td><img src='http://localhost:8888/hotel management 1/admin/static/images/upload/. $image; ' alt='Image' style='width: 80px; height: 80px;'>
-                                            </td>
                                             <td>" . $row["date"] . "</td>
                                         </tr>";
                                 }

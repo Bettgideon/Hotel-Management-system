@@ -31,10 +31,6 @@ require 'server.php.';
                         <span>type of room:</span>
                         <input type="text" name="room_type" placeholder="type of room" class="input">
                     </div>
-                    <div class="inputBox">
-                        <span>ID FRONT Image:</span>
-                        <input type="file" name="image"  accept=".jpg, .jpeg, .png" value="" />
-                    </div>
                     
                     <div class="inputBox">
                         <span>Date:</span>
