@@ -33,6 +33,7 @@ The Hotel Management System is a web-based application designed to streamline th
 5. Use the reporting and analytics tools to track hotel performance and generate insights.
 
 ## Credits
-- Created by <link rel a https://github.com/Bettgideon/ value= Bettgideon>
+- Created by <a href="https://github.com/Bettgideon" target="_blank">Bett Gideon</a>
+
 - Contact: [kiprotichgideonbett@gmail.com]
 
