@@ -100,9 +100,9 @@
 }
 
 .navbar .navbar-nav .nav-link {
-    margin-right: 35px;
-    padding: 25px 0;
-    color: var(--dark);
+    margin-right: 15px;
+    padding: 15px 10px;
+    color: #555; /* Dark gray color */
     font-weight: 600;
     text-transform: uppercase;
     outline: none;
@@ -110,7 +110,7 @@
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: #007bff; /* Blue color */
 }
 
 .navbar .dropdown-toggle::after {
@@ -197,6 +197,10 @@
         height: 100%;
         object-fit: cover;
     }
+    .orange-navbar {
+        background-color: orange !important;
+    }
+    
 }
 
 .page-header {
