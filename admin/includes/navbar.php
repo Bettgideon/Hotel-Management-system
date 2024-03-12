@@ -25,17 +25,12 @@
         <a class="nav-link active" href="failed.php">Failed</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="team.php">delivery Teams</a>
+        <a class="nav-link active" href="team.php">Delivery Teams</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="moderators.php">Moderators</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="paramedics.php">medics stuffs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="booked.php">rooms booked</a>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link active" href="drivers.php">Drivers</a>
       </li>

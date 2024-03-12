@@ -12,200 +12,159 @@ include 'server.php';
   <?php include './includes/navbar.php'; ?>
 
 <div class="container mt-3" >
-<!--Cards-->
-<div class="row " style="text-align: center;">
-<!--start of one Card -->
-
-<div class="col-xl-3 col-md-6 mb-4 mt-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                       <a href="./inqueue.php"> Requests In Queue </div>
-                </div>
-                <div class="col-auto">
-                    <i class="fa-solid fa-arrows-rotate fa-2x"style="color:#e83e8c"></i>
-                  </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-  <!--end of one Card -->
-  <!--start of one Card -->
-<div class="col-xl-3 col-md-6 mb-4 mt-4">
-  <div class="card border-left-primary shadow h-100 py-2">
-      <div class="card-body">
-          <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                    <a href="./attending.php">Requests Being Attended</div>
-              </div>
-              <div class="col-auto">
-              <i class="fas fa-truck fa-2x" style="color: #e83e8c;"></i>
-              </a>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-  <!--end of one Card -->
-  <!--start of one Card -->
-  <div class="col-xl-3 col-md-6 mb-4 mt-4">
-  <div class="card border-left-primary shadow h-100 py-2">
-      <div class="card-body">
-          <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                    <a href="./attending.php">statistics</div>
-              </div>
-              <div class="col-auto">
-              <i class="fas fa-chart-bar fa-2x" style="color: #e83e8c;"></i>
-              </a>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-  <!--end of one Card -->
-  <!--start of one Card -->
-  <div class="col-xl-3 col-md-6 mb-4 mt-4">
-  <div class="card border-left-primary shadow h-100 py-2">
-      <div class="card-body">
-          <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                    <a href="./booked.php">the rooms booked</div>
-              </div>
-              <div class="col-auto">
-              <i class="fas fa-hotel fa-2x" style="color: #e83e8c;"></i>
-              </a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <!--end of one Card -->
-  <!--start of one Card -->
-</div>
-<div class="col-xl-3 col-md-6 mb-4 mt-4">
-  <div class="card border-left-primary shadow h-100 py-2">
-      <div class="card-body">
-          <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                    <a href="./successful.php">Successful Requests</div>
-              </div>
-              <div class="col-auto">
-                  <i class="fa-solid fa-check-double fa-2x"style="color:#e83e8c"></i>
-              </a>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<!--end of one Card -->
- <!--start of one Card -->
-<div class="col-xl-3 col-md-6 mb-4 mt-4">
-  <div class="card border-left-primary shadow h-100 py-2">
-      <div class="card-body">
-          <div class="row no-gutters align-items-center">
-              <div class="col mr-2">
-                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                    <a href="./failed.php">Failed Requests</div>
-              </div>
-              <div class="col-auto">
-                  <i class="fa-solid fa-triangle-exclamation fa-2x"style="color:#e83e8c"></i>
-              </a>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<!--end of one Card -->
-<!--end of Cards-->
-</div>
-
-<!--Second Row-->
-<div class="row " style="text-align: center;">
-  <!--start of one Card -->
-  <div class="col-xl-3 col-md-6 mb-4 mt-4">
-      <div class="card border-left-primary shadow h-100 py-2">
-          <div class="card-body">
-              <div class="row no-gutters align-items-center">
-                  <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                        <a href="./team.php"> delivery stuffs</div>
-                  </div>
-                  <div class="col-auto">
-                      <!-- <i class="fa-solid fa-wifi fa-2x text-gray-300" style="color:#e83e8c"></i> -->
-                      <i class="fa-solid fa-person fa-2x"style="color:#e83e8c"></i>
-                  </a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-    <!--end of one Card -->
-
-    <!--start of one Card -->
-  <div class="col-xl-3 col-md-6 mb-4 mt-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                      <a href="./moderators.php"> Moderators (Admins)</div>
-                </div>
-                <div class="col-auto">
-                    <i class="fa-solid fa-user-ninja fa-2x"style="color:#e83e8c"></i>
-                </a>
+<div class="container">
+    <!-- First Row -->
+    <div class="row justify-content-center">
+        <!-- Start of Card 1 -->
+        <div class="col-xl-3 col-md-6 mb-4 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <a href="./inqueue.php">Requests In Queue</a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa-solid fa-arrows-rotate fa-2x" style="color:#e83e8c"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-  </div>
-  <!--end of one Card -->
-   <!--start of one Card -->
-  <div class="col-xl-3 col-md-6 mb-4 mt-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                      <a href="./paramedics.php"> medics stuffs</div>
-                        
+        <!-- End of Card 1 -->
+        <!-- Start of Card 2 -->
+        <div class="col-xl-3 col-md-6 mb-4 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <a href="./attending.php">Requests Being Attended</a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-truck fa-2x" style="color: #e83e8c;"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-auto">
-                <i class="fas fa-medkit fa-2x" style="color: #e83e8c;"></i>
+            </div>
+        </div>
+        <!-- End of Card 2 -->
+        <!-- Start of Card 3 -->
+        <div class="col-xl-3 col-md-6 mb-4 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <a href="./attending.php">Statistics</a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chart-bar fa-2x" style="color: #e83e8c;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Card 3 -->
+        <!-- Start of Card 4 -->
+        <div class="col-xl-3 col-md-6 mb-4 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <a href="./booked.php">Booked Rooms</a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-hotel fa-2x" style="color: #e83e8c;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Card 4 -->
+    </div>
+    <!-- Second Row -->
+    <div class="row justify-content-center">
+        <!-- Start of Card 5 -->
+        <div class="col-xl-3 col-md-6 mb-4 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <a href="./successful.php">Successful Requests</a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa-solid fa-check-double fa-2x" style="color:#e83e8c"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Card 5 -->
+        <!-- Start of Card 6 -->
+        <div class="col-xl-3 col-md-6 mb-4 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <a href="./failed.php">Failed Requests</a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa-solid fa-triangle-exclamation fa-2x" style="color:#e83e8c"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Card 6 -->
+        <!-- Start of Card 7 -->
+        <div class="col-xl-3 col-md-6 mb-4 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <a href="./team.php">Delivery Staff</a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa-solid fa-person fa-2x" style="color:#e83e8c"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Card 7 -->
+        <!-- Start of Card 8 -->
+        <div class="col-xl-3 col-md-6 mb-4 mt-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                <a href="./moderators.php">Moderators (Admins)</a>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fa-solid fa-user-ninja fa-2x" style="color:#e83e8c"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Card 8 -->
+    </div>
+</div>
 
-                </a>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-  <!--end of one Card -->
-   <!--start of one Card -->
-   <div class="col-xl-3 col-md-6 mb-4 mt-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                      <a href="drivers.php">Drivers</div>
-                        
-                </div>
-                <div class="col-auto">
-                    <i class="fa-solid fa-user fa-2x"style="color:#e83e8c"></i>
-                </a>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-  <!--end of one Card -->
-  <!--end of Cards-->
   </div>
 </div>
 
