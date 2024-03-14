@@ -165,7 +165,7 @@ include './components/header.php';
       <select id="inputState" name="food_type" required class="form-control">
         <option value="">Choose...</option>
         <option value="Snacks (Cost Varies)">Snacks (Cost Varies)</option>
-        <option value="Drinks (Ksh 600 per grate)">Drinks (Ksh 600 per grate)</option>
+        <option value="Drinks (Ksh 600 per grate)">Drinks (Ksh 600 per crate)</option>
         <option value="Meat (Ksh 500 per person)">Meat (Ksh 500 per person)</option>
         <option value="other">Other</option>
       </select>

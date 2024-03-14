@@ -102,16 +102,15 @@ $admin_name = $admin_fname. " ".$admin_lname;
         <form method="POST" action="server.php">
      
           <div class="form-group">
-          <label for="recipient-name" class="col-form-label">Student Name</label>
+          <label for="recipient-name" class="col-form-label">User Name</label>
             <input type="text" name='studentName' readonly required class="form-control" id="sName" value="">
           </div>
           <div class="form-group">
           <label for="recipient-name" class="col-form-label">Phone Number</label>
             <input type="text" name='studentPhone' readonly required class="form-control" id="sPhone" value="">
-          </div>
-          <div class="form-group">
-          <label for="recipient-name" class="col-form-label">delivery team</label>
-            <input type="text" name='studentOrderCode' readonly required class="form-control" id="sOrderCode" value="">
+            <div class="form-group">
+          <label for="recipient-name" class="col-form-label">Order Code</label>
+            <input type="text" name='studentHelpCode' readonly required class="form-control" id="sOrderCode" value="">
           </div>
           <div class="form-group">
           <label for="recipient-name" class="col-form-label">Request Status</label>
@@ -131,10 +130,10 @@ $admin_name = $admin_fname. " ".$admin_lname;
           </div>
       
           <div class="form-group">
-          <label for="student_name">delivery team</label>
+          <label for="student_name">Delivery Team</label>
         <select class="form-control form-control-sm" name='team'>
-        <option value="">Select delivery team</option>
-<?php $sql=mysqli_query($db,"select * FROM delivey_team");
+        <option value="">Select Delivery Team</option>
+<?php $sql=mysqli_query($db,"select * FROM rescue_team");
 
 while ($row=mysqli_fetch_array($sql)) {
   ?>
