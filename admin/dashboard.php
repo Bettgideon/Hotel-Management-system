@@ -58,7 +58,7 @@ include 'server.php';
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                <a href="./attending.php">Statistics</a>
+                                <a href="./analytics.php">Statistics</a>
                             </div>
                         </div>
                         <div class="col-auto">
