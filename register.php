@@ -8,6 +8,42 @@ include 'server.php';
   <?php
 include './components/header.php';
 ?>
+<style>
+.bg-ffe6cc {
+    background-color: #ffe6cc;
+}
+
+.container,
+.register-page-section,
+.register-page {
+    background-color: #ffe6cc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-page-header h2 {
+    color: #fff;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.login-col {
+    text-align: center;
+}
+
+.login-col p {
+    margin-top: 20px;
+}
+
+</style>
   </head>
   <body style="background-color: #d2d6de">
     <div class="container register-page-section">
@@ -26,11 +62,15 @@ include './components/header.php';
             </div>
           </div>
           <form
-            method="post"
-            action="server.php"
-            enctype="multipart/form-data"
-            class="register-form"
-          >
+    method="post"
+    action="server.php"
+    enctype="multipart/form-data"
+    class="register-form bg-ffe6cc"
+  >
+    <!-- Form fields -->
+</form>
+
+</form>
             <div class="form-group row">
               <label for="inputEmail3" class="col-sm-3 col-form-label"
                 >Username</label

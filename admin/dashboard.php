@@ -53,21 +53,24 @@ include 'server.php';
         <!-- End of Card 2 -->
         <!-- Start of Card 3 -->
         <div class="col-xl-3 col-md-6 mb-4 mt-4">
-            <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                <a href="./analytics.php">Statistics</a>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-chart-bar fa-2x" style="color: #e83e8c;"></i>
-                        </div>
-                    </div>
+        <div class="card border-left-primary shadow h-100 py-2">
+    <div class="card-body">
+        <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                    <a href="./analytics.php">Statistics</a>
                 </div>
             </div>
+            <div class="col-auto">
+                <a href="./analytics.php"> <!-- Anchor tag for redirect link -->
+                    <i class="fas fa-chart-bar fa-2x" style="color: #e83e8c;"></i>
+                </a>
+            </div>
         </div>
+    </div>
+</div>
+</div>
+
         <!-- End of Card 3 -->
         <!-- Start of Card 4 -->
         <div class="col-xl-3 col-md-6 mb-4 mt-4">
@@ -170,6 +173,7 @@ include 'server.php';
 
 
 
+
     <!--Bootstrap 4 scripts-->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -179,3 +183,4 @@ include 'server.php';
 <script src="./static/js/app.js"></script>
   </body>
 </html>
+<?php include './includes/footer.php'; ?>

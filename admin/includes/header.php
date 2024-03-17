@@ -1,5 +1,5 @@
-
-  
+<header style="background-color: #3DD498;">
+    <!-- Header content goes here -->
     <link rel="icon" href="./static/img/logo.png" type="image/x-icon" />
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -13,4 +13,4 @@
     <!--Style Css-->
     <link rel="stylesheet" href="./static/css/style.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
- 
+</header>

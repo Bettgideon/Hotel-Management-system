@@ -4,94 +4,97 @@ include 'server.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Password Reset</title>
-  <?php
-include './components/header.php';
-?>
-  </head>
-
-<body style="background-color: #d2d6de;">
-    <div class="container">
-
-  
-        <div class="row mt-5 login-page-row"> 
-<div class="col-md-3"></div>
-<div class="col-md-6">
-<?php
-if(isset($_SESSION['email_status']))
-{
-    ?>
- <div class="alert alert-warning alert-dismissible fade show  mt-3" role="alert" style="text-align: center;">
-        <h5><?= $_SESSION['email_status']; ?></h5>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-    </div>
+    <title>Password Reset</title>
     <?php
-    unset($_SESSION['email_status']);
-}
-?>
-</div>
-<div class="col-md-3"></div>
-            <div class="col-md-3"></div>
-            <div class="col-md-6 mt-1 login-page">
-       
-                <div class="col-md-12 mb-2 login-page-header">
-                    <h2 class="text-center" style="color: #fff">Password Reset</h2>
+    include './components/header.php';
+    ?>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
 
-                    <div class="row">
-                        <div class="col-md-3"></div>
-                        
-                        <div class="col-md-3"></div>
-                    </div>
-                </div>
+        .container {
+            background-color: #ffe6cc;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+        }
 
+        .container h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
 
-                <form method="POST" action="server.php" class="login-form">
-                <?php
-                include 'errors.php';
-                ?>
-                 <div class="form-group row">      
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Username</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputEmail3" placeholder="e.g CIM/0001/021" name="student_username"
-                                required />
-                        </div>
-                    </div>
-                <div class="form-group row">      
-                        <label for="inputEmail3" class="col-sm-3 col-form-label">Email Address</label>
-                        <div class="col-sm-9">
-                            <input type="email" class="form-control" id="inputEmail3" placeholder="Enter your Email Address" name="student_email"
-                                required />
-                        </div>
-                    </div>
-              
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-                    <div class="form-group row"> 
-                    <div class="col-sm-3">  
-                        </div>
-                        <div class="col-sm-6">
-                        <button type="submit" name="password_reset_btn" class="btn btn-info btn-block p-2">
-                              <strong> Reset Password</strong>
-                            </button>
-                        </div>
-                        <div class="col-sm-3">
-                          
-                        </div>
-                    </div>
-                    <hr>
-           
-         
-                </form>
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .alert {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Password Reset</h2>
+        <?php
+        if(isset($_SESSION['email_status'])) {
+            ?>
+            <div class="alert alert-warning" role="alert">
+                <strong><?= $_SESSION['email_status']; ?></strong>
             </div>
-        </div>
+            <?php
+            unset($_SESSION['email_status']);
+        }
+        ?>
+        <form method="POST" action="server.php">
+            <?php include 'errors.php'; ?>
+            <div class="form-group">
+                <label for="inputEmail3">Username</label>
+                <input type="text" class="form-control" id="inputEmail3" placeholder="e.g CIM/0001/021" name="student_username" required />
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3">Email Address</label>
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Enter your Email Address" name="student_email" required />
+            </div>
+            <button type="submit" class="btn btn-primary" name="password_reset_btn">Reset Password</button>
+        </form>
     </div>
 
     <!-- Optional JavaScript -->
-  <?php 
-  include 'components/scripts.php';
-  ?>
-
+    <?php 
+    include 'components/scripts.php';
+    ?>
 </body>
-
 </html>

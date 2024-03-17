@@ -18,7 +18,7 @@
         .container {
             width: 400px;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #ffe6cc; 
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -73,15 +73,19 @@
         .forgot-password a:hover {
             text-decoration: underline;
         }
+
+        .register-link {
+            text-align: center; /* Center the register link */
+            margin-top: 20px; /* Add some space between forgot password and register links */
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Welcome to Hotel Management Information System</h1>
+            <h1>Hotel Management Information System Login</h1>
             <div class="row">
                 <div class="col-md-3"></div>
-              
                 <div class="col-md-3"></div>
             </div>
         </header>
@@ -96,11 +100,16 @@
                 <input type="password" id="password" name="password" placeholder="Password" required>
             </div>
             <button type="submit" name="login_btn">Sign In</button>
-            <div class="forgot-password">
+            <div class="forgot-password text-center"> <!-- Centering the forgot password link -->
                 <a name="forgot_password_btn" href="forgot-password.php">Forgot Password?</a>
+            </div>
+            <br>
+            <div class="register-link">
+                <p>Don't have an account? <a href="register.php">Sign Up</a>.</p>
             </div>
         </form>
     </div>
+    
     <?php include 'components/scripts.php'; ?>
 </body>
 </html>
