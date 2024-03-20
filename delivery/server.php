@@ -269,7 +269,7 @@ function send_password_reset($delivery_name,$delivery_email,$token){
   $mail->setFrom('info@maseno.co.ke');
   $mail->FromName = 'Maseno University';
 
-  $mail->addAddress($rdelivery_email);               //Name is optional
+  $mail->addAddress($delivery_email);               //Name is optional
   // $mail->addReplyTo('info@example.com', 'Information');
   // $mail->addCC('cc@example.com');
   // $mail->addBCC('bcc@example.com');

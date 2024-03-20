@@ -258,8 +258,8 @@ if (mysqli_num_rows($results) == 1) {
   }
 }
 
-// booking process
- // Start output buffering
+// Start output buffering
+ob_start();
 
 if (isset($_POST["submit"])) {
     $name = htmlspecialchars($_POST['name']);
@@ -267,34 +267,13 @@ if (isset($_POST["submit"])) {
     $room_type = htmlspecialchars($_POST['room_type']);
     $date = htmlspecialchars($_POST['date']);
 
-    if ($_FILES["image"]["error"] == UPLOAD_ERR_NO_FILE) {
-        echo "<script>alert('Please upload an ID image.');</script>";
-    } else {
-        $fileName = $_FILES["image"]["name"];
-        $fileSize = $_FILES["image"]["size"];
-        $tmpName = $_FILES["image"]["tmp_name"];
+    // Use prepared statements or sanitize input to prevent SQL injection
+    $register_query = "INSERT INTO room(name, number, room_type, date) VALUES (?, ?, ?, ?)";
+    $stmt = mysqli_prepare($db, $register_query);
+    mysqli_stmt_bind_param($stmt, "ssss", $name, $number, $room_type, $date);
+    mysqli_stmt_execute($stmt);
 
-        $validImageExtension = ['jpg', 'jpeg', 'png'];
-        $imageExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
-
-        if (!in_array($imageExtension, $validImageExtension)) {
-            echo "<script>alert('Invalid Image Extension');</script>";
-        } else if ($fileSize > 1000000) {
-            echo "<script>alert('Image Size Is Too Large');</script>";
-        } else {
-            $newImageName = uniqid() . '.' . $imageExtension;
-
-            move_uploaded_file($tmpName, 'admin/static/images/upload/' . $newImageName);
-
-            // Use prepared statements or sanitize input to prevent SQL injection
-            $register_query = "INSERT INTO room(name, number, room_type, image, date) VALUES (?, ?, ?, ?, ?)";
-            $stmt = mysqli_prepare($db, $register_query);
-            mysqli_stmt_bind_param($stmt, "sssss", $name, $number, $room_type, $newImageName, $date);
-            mysqli_stmt_execute($stmt);
-
-            echo "<script>alert('Successfully booked the room'); document.location.href = 'dashboard.php';</script>";
-        }
-    }
+    echo "<script>alert('Successfully booked the room'); document.location.href = 'dashboard.php';</script>";
 }
 
 // Logic for 'bookbtn' (if needed)
@@ -303,6 +282,4 @@ if (isset($_POST['bookbtn'])) {
 }
 
 ob_end_flush(); // Flush the output buffer
-
-
 ?>

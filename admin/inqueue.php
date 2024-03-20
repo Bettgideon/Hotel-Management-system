@@ -133,7 +133,7 @@ $admin_name = $admin_fname. " ".$admin_lname;
           <label for="student_name">Delivery Team</label>
         <select class="form-control form-control-sm" name='team'>
         <option value="">Select Delivery Team</option>
-<?php $sql=mysqli_query($db,"select * FROM rescue_team");
+<?php $sql=mysqli_query($db,"select * FROM delivery_team");
 
 while ($row=mysqli_fetch_array($sql)) {
   ?>

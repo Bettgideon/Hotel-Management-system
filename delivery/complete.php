@@ -21,7 +21,7 @@ include './components/header.php';
   <thead>
       <h3>Successful Tasks</h3>
     <tr class='bg-primary'>
-      <th scope="col">delivery team</th>
+      <th scope="col">Delivery team</th>
       <th scope="col">Registration Number</th>
       <th scope="col">Student Name</th>
       <th scope="col">Description</th>

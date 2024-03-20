@@ -31,6 +31,9 @@
           <li class="nav-item">
             <a class="nav-link active" href="moderators.php">Moderators</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="booked.php">Booked Rooms</a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link active" href="drivers.php">Drivers</a>

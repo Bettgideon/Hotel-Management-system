@@ -164,98 +164,152 @@ include 'server.php';
            </p>
    </div>
    <div class="cards">
+    <!-- Card 1 -->
+    <div class="read">
+        <img src="./static/css/roomcss/roompics/img/bed1.jpg" alt="Deluxe Room">
+        <div class="read-text">
+            <h5>Deluxe Room</h5>
+            <p>Ksh 30,000/night</p><br><br><br><br><br><br><br><br>
+            <div class="book">
+                <a href="booking.php?room_name=Deluxe%20Room" class="book-btn">BOOK NOW</a>
+            </div>
+        </div>
+    </div>
+          <!-- Card 2 - Single Room -->
         <div class="read">
-            <img src=".\static\css\roomcss\roompics\img\bed1.jpg" alt="">
+            <img src="./static/css/roomcss/roompics/img/bed2.jpg" alt="Single Room">
             <div class="read-text">
-                <h5>Deluxe Room</h5>
-                <p>Ksh50,000/night</p>
+                <h5>Single Room</h5>
+                <p>Ksh 50,000/night</p><br><br><br><br><br><br><br><br>
                 <div class="book">
-                <a href="#">5%discount</a><br><br><br><br>
-                    <a href="booking.php" class="book-btn">Book Now</a>
+                    <a href="booking.php?room_name=Single%20Room" class="book-btn">BOOK NOW</a>
                 </div>
             </div>
         </div>
-          <div class="read">
-              <img src=".\static\css\roomcss\roompics\img\bed2.jpg" alt="">
-              <div class="read-text">
-                  <div>
-                     <h5>Single room</h5>
-                     <p>Ksh80,000/night</p>
-                    </div>
-                  <div class="book"><a href="#">5%discount</a></div><br><br><br><br>
-                  <a href="booking.php" class="book-btn">Book Now</a>
+
+        <!-- Card 3 - Double Room -->
+        <div class="read">
+            <img src="./static/css/roomcss/roompics/img/bed3.jpg" alt="Double Room">
+            <div class="read-text">
+                <h5>Double Room</h5>
+                <p>Ksh 90,000/night</p><br><br><br><br><br><br><br><br>
+                <div class="book">
+                    <a href="booking.php?room_name=Double%20Room" class="book-btn">BOOK NOW</a>
                 </div>
-          </div>
-          <div class="read">
-              <img src=".\static\css\roomcss\roompics\img\bed3.jpg" alt="">
-              <div class="read-text">
-                  <div>
-                     <h5>Double Room</h5>
-                     <p>Ksh20,000/night</p>
-                    </div>
-                    <div class="book"><a href="#">5%discount</a></div><br><br><br><br>
-                    <a href="booking.php" class="book-btn">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Card 4 - Child Room -->
+        <div class="read">
+            <img src="./static/css/roomcss/roompics/img/bed4.jpg" alt="Child Room">
+            <div class="read-text">
+                <h5>Child Room</h5>
+                <p>Ksh 40,000/night</p><br><br><br><br><br><br><br><br>
+                <div class="book">
+                    <a href="booking.php?room_name=Child%20Room" class="book-btn">BOOK NOW</a>
                 </div>
-          </div>
-          <div class="read">
-              <img src=".\static\css\roomcss\roompics\img\bed4.jpg" alt="">
-              <div class="read-text">
-                  <div>
-                     <h5>Child Room</h5>
-                     <p>Ksh140,000/night</p>
-                    </div>
-                    <div class="book"><a href="#">5%discount</a></div>
-                    <a href="booking.php" class="book-btn">Book Now</a><br><br><br><br>
+            </div>
+        </div>
+
+        <!-- Card 5 - Couple Room -->
+        <div class="read">
+            <img src="./static/css/roomcss/roompics/img/bed5.jpg" alt="Couple Room">
+            <div class="read-text">
+                <h5>Couple Room</h5>
+                <p>Ksh 100,000/night</p><br><br><br><br><br><br><br><br>
+                <div class="book">
+                    <a href="booking.php?room_name=Couple%20Room" class="book-btn">BOOK NOW</a>
                 </div>
-          </div>
-          <div class="read">
-              <img src=".\static\css\roomcss\roompics\img\bed5.jpg" alt="">
-              <div class="read-text">
-                  <div>
-                     <h5>Couple Room</h5>
-                     <p>Ksh120,000/night</p>
-                    </div>
-                    <div class="book"><a href="#">5%discount</a></div>
-                    <a href="booking.php" class="book-btn">Book Now</a><br><br><br><br>
+            </div>
+        </div>
+
+        <!-- Card 6 - Elegant Room -->
+        <div class="read">
+            <img src="./static/css/roomcss/roompics/img/bed6.jpg" alt="Elegant Room">
+            <div class="read-text">
+                <h5>Elegant Room</h5>
+                <p>Ksh 60,000/night</p><br><br><br><br><br><br><br><br>
+                <div class="book">
+                    <a href="booking.php?room_name=Elegant%20Room" class="book-btn">BOOK NOW</a>
                 </div>
-          </div>
-          <div class="read">
-              <img src=".\static\css\roomcss\roompics\img\bed6.jpg" alt="">
-              <div class="read-text">
-                  <div>
-                     <h5>Elegant Room</h5>
-                     <p>Ksh140,000/night</p>
-                    </div>
-                    <div class="book"><a href="#">2.5%discount</a></div><br><br><br><br>
-                    <a href="booking.php" class="book-btn">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Card 7 - Personal Room -->
+        <div class="read">
+            <img src="./static/css/roomcss/roompics/img/bed7.jpg" alt="Personal Room">
+            <div class="read-text">
+            <h5>Personal Room</h5>
+            <p>Ksh 70,000 / night</p><br><br><br><br><br><br><br><br>
+                <div class="book">
+                    <a href="booking.php?room_name=Personal%20Room" class="book-btn">BOOK NOW</a>
                 </div>
-          </div>
-          <div class="read">
-              <img src=".\static\css\roomcss\roompics\img\bed7.jpg" alt="">
-              <div class="read-text">
-                  <div>
-                     <h5>Personal Room</h5>
-                     <p>Ksh80,000/night</p>
-                    </div>
-                    <div class="book"><a href="#">5%discount</a></div><br><br><br><br>
-                    <a href="booking.php" class="book-btn">Book Now</a>
+            </div>
+        </div>
+
+        <!-- Card 8 - Presidential Room -->
+        <div class="read">
+            <img src="./static/css/roomcss/roompics/img/bed8.jpeg" alt="Presidential Room">
+            <div class="read-text">
+                <h5>VIP Room</h5>
+                <p>Ksh 300,000/night</p><br><br><br><br><br><br><br><br>
+                <div class="book">
+                    <a href="booking.php?room_name=VIP%20Room" class="book-btn">BOOK NOW</a>
                 </div>
-          </div>
-       <div class="read">
-              <img src=".\static\css\roomcss\roompics\img\bed8.jpeg" alt="">
-              <div class="read-text">
-                  <div>
-                     <h5>Presidential Room</h5>
-                     <p>Ksh300,000/night</p>
-                  </div>
-                   <div class="book"><a href="#">25%discount</a></div><br><br><br><br>
-                   <a href="booking.php" class="book-btn">Book Now</a>
-                </div>
-          </div>
-      </div>
+            </div>
+        </div>
+        <!-- Card 9 - Luxury Suite -->
+<div class="read">
+    <img src="./static/css/roomcss/roompics/img/luxury_suite.jpg" alt="Luxury Suite">
+    <div class="read-text">
+        <h5>Luxury Suite</h5>
+        <p>Ksh 250,000/night</p><br><br><br><br><br><br><br><br>
+        <div class="book">
+            <a href="booking.php?room_name=Luxury%20Suite" class="book-btn">BOOK NOW</a>
+        </div>
+    </div>
+</div>
+
+<!-- Card 10 - Executive Room -->
+<div class="read">
+    <img src="./static/css/roomcss/roompics/img/executive_room.jpg" alt="Executive Room">
+    <div class="read-text">
+        <h5>Executive Room</h5>
+        <p>Ksh 180,000/night</p><br><br><br><br><br><br><br><br>
+        <div class="book">
+            <a href="booking.php?room_name=Executive%20Room" class="book-btn">BOOK NOW</a>
+        </div>
+    </div>
+</div>
+
+<!-- Card 11 - Family Suite -->
+<div class="read">
+    <img src="./static/css/roomcss/roompics/img/family_suite.jpg" alt="Family Suite">
+    <div class="read-text">
+        <h5>Family Suite</h5>
+        <p>Ksh 200,000/night</p><br><br><br><br><br><br><br><br>
+        <div class="book">
+            <a href="booking.php?room_name=Family%20Suite" class="book-btn">BOOK NOW</a>
+        </div>
+    </div>
+</div>
+
+<!-- Card 12 - Honeymoon Suite -->
+<div class="read">
+    <img src="./static/css/roomcss/roompics/img/honeymoon_suite.jpg" alt="Honeymoon Suite">
+    <div class="read-text">
+        <h5>Honeymoon Suite</h5>
+        <p>Ksh 220,000/night</p><br><br><br><br><br><br><br><br>
+        <div class="book">
+            <a href="booking.php?room_name=Honeymoon%20Suite" class="book-btn">BOOK NOW</a>
+        </div>
+    </div>
+</div>
+
+    </div>
       <section id="book-session">
 		<div class="book">
-    <a href="booking.php" class="book-btn">Book Now</a>
+    
 		</section>
 
 </body>
@@ -296,262 +350,10 @@ include 'server.php';
             <!-- FOOTER -->
       
         
-        <div id="polka">
-         <div class="fifth-row">
-        
-        <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            
-            
-    </div>
-          <div class="fourth-row">
-        
-        <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            
-            
-    </div>
-        <div class="third-row">
-        
-        <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            
-            
-    </div>
-          <div class="second-row">
-        
-        <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot dot-hidden"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            
-            
-    </div>
-        <div class="first-row">
-        
-        <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>
-            <div class="dot"> </div>              
-    </div>
+       
         </div>
         </div>
     
   </body>
+  
 </html>

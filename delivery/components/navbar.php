@@ -1,3 +1,4 @@
+<div class="container-fluid" id="mynav" style="background-color: #3DD498;">
 <div class="container-fluid" id="mynav">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="./dashboard.php">Dashboard</a>

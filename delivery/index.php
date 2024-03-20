@@ -13,7 +13,7 @@ include './components/header.php';
         <div class="col-md-4 mt-5 login-page">
           
         <div class="col-md-12 mb-2 login-page-header" >
-            <h2 class="text-center" style="color: #fff">delivery team Login</h2>
+            <h2 class="text-center" style="color: #fff">Delivery team Login</h2>
 
             <div class="row">
               <div class="col-md-4"></div>

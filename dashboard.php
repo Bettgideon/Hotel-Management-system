@@ -15,7 +15,7 @@ $studentAdm = $_SESSION['username'];
 // $userIP = $_SERVER['REMOTE_ADDR'];
  
 //static ip address
-$ip = "192.107.70.4"; 
+$ip = "192.168. 1.10"; 
 
 //Get IP Address of User in PHP
 //$ip = $_SERVER['REMOTE_ADDR']; 
