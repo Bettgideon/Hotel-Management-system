@@ -36,7 +36,7 @@ The Hotel Management System is a web-based application designed to streamline th
 - Created by <a href="https://github.com/Bettgideon" target="_blank">Bett Gideon</a>
 
 ## Contact:
--  [kiprotichgideonbett@gmail.com]
+-  kiprotichgideonbett@gmail.com
 -  <a href="https://wa.me/254790729721?text=WhatsApp%20me">WhatsApp me</a>
 
 
