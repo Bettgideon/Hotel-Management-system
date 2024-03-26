@@ -5,7 +5,7 @@ $teamName = $_SESSION['team_name'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>delivery team</title>
+    <title>Delivery team</title>
 <?php include './includes/header.php'; ?>
 </head>
   <body>
@@ -98,7 +98,7 @@ $teamName = $_SESSION['team_name'];
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">delivery team Registration</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Delivery team Registration</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
