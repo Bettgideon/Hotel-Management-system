@@ -94,19 +94,20 @@ include './components/header.php';
             $data_result = mysqli_query($db, $data_fetch_query);
             if ($data_result->num_rows > 0){
                 while($row = $data_result->fetch_assoc()) {
-                  $student_reg = $row["regNum"];
-                  $task_code = $row["orderID"];
-                  $_SESSION['food_order_code'] = $task_code;
+                  $admNo = $row["admNo"];
+                  $orderID = $row["orderID"];
+                  $_SESSION['food_order_code'] = $order_code;
              
             echo "<tr> <td>" .$row["orderID"].  "</td>";
-            echo "<td>" .$row["regNum"]."</td>";
+            echo "<td>" .$row["admNO"]."</td>";
             echo "<td>" .$row["firstname"]." ".$row["lastname"]."</td>";
             echo "<td>" .$row["status"]."</td>";
+            echo "<td>" .$row["food_type"]."</td>";
             echo "<td>" .$row["timestamp"]."</td>";    
-            echo "<td>
+            echo "<td>  
             <form method ='POST' action='server.php'>
-            <input  type='text' hidden  name='task_code' value='$task_code'>        
-            <input  type='text'  hidden name='student_reg' value='$student_reg'>
+            <input  type='text' hidden  name='order_code' value='$orderID'>        
+            <input  type='text'  hidden name='student_reg' value='$admNo'>
             <input type='submit' id='task-view-button' value='View Task' name='view-task-btn' class='btn btn-success'>
          
             </form>

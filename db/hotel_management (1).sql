@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 04, 2024 at 12:45 PM
+-- Generation Time: Mar 26, 2024 at 02:20 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -46,9 +46,8 @@ CREATE TABLE `admin_details` (
 
 INSERT INTO `admin_details` (`id`, `admin_id`, `admin_firstname`, `admin_lastname`, `admin_email`, `admin_phone`, `admin_rank`, `admin_password`, `registration_timestamp`) VALUES
 (1, 'CIM/00069/021', 'kirigo', 'evans', 'kipngenokirigo@gmail.com', '0758413462', 'super_admin', '4cb8e45bd18070ba7d3af01bd3f0f619', '2022-04-03 19:43:10'),
-(2, 'MSU/00050/022', 'Caroline', 'Mwihoko', 'carolinem23@gmail.com', '0745973325', 'admin', '4e1a68f169ea4af35b8d980e2f67fa67', '2022-04-03 19:43:10'),
-(3, 'MSU/00065/022', 'Martin', 'Mwai', 'mwaimartin@gmail.com', '0752658578', 'super_admin', '4e1a68f169ea4af35b8d980e2f67fa67', '2022-05-22 07:56:05'),
-(4, 'MSU/00082/022', 'Grace', 'Kimanthi', 'kimathigrace2001@gmail.com', '0712547885', 'admin', '4e1a68f169ea4af35b8d980e2f67fa67', '2022-05-22 07:57:26');
+(2, 'MSU/00050/022', 'Brian', 'Kipkorir', 'kipkorirbrian@gmail.com', '0711362472', 'admin', '4e1a68f169ea4af35b8d980e2f67fa67', '2022-04-03 19:43:10'),
+(3, 'MSU/00065/022', 'Gideon', 'Bett', 'kiprotichgideonbett@gmail.com', '0790729720', 'super_admin', '40955ce4843054004b636f2fefa80732', '2022-05-22 07:56:05');
 
 -- --------------------------------------------------------
 
@@ -73,10 +72,10 @@ CREATE TABLE `delivery_team` (
 --
 
 INSERT INTO `delivery_team` (`id`, `team_id`, `team_username`, `team_name`, `team_phone`, `team_email`, `team_password`, `password_reset_token`, `registration_timestamp`) VALUES
-(1, 'TM01', 'HYDRO/022', 'Team Hydro', 786378542, 'letsgo@gmail.com', '4cb8e45bd18070ba7d3af01bd3f0f619', NULL, '2022-04-04 11:21:26'),
-(2, 'TM02', 'CUTY/022', 'Team Cuty', 742975635, 'blinxcorporation@gmail.com', 'ebcfd5a11d7cf5ba89f838fc766be7a4', NULL, '2022-04-04 11:21:26'),
-(3, 'TM03', 'SHIFTY/022', 'Team Shifty', 759753362, 'shifty@gmail.com', 'ebcfd5a11d7cf5ba89f838fc766be7a4', NULL, '2022-04-04 11:22:37'),
-(4, 'TM04', 'LIONS/022', 'The Lions', 785415289, 'masenolions@gmail.com', '86aa71c6832f46e2d79134fe3d5080b7', NULL, '2022-05-21 23:08:41');
+(1, 'TM01', 'Kings/024', 'Team Kings', 786378542, 'teamkings@gmail.com', '0a5af41275838fb39d4cd0aa9e1d06a9', NULL, '2022-04-04 11:21:26'),
+(2, 'TM02', 'Queens/024', 'Team Queens', 742975635, 'queens@gmail.com', 'ebcfd5a11d7cf5ba89f838fc766be7a4', NULL, '2022-04-04 11:21:26'),
+(3, 'TM03', 'SHIFTY/024', 'Team Shifty', 759753362, 'shifty@gmail.com', 'ebcfd5a11d7cf5ba89f838fc766be7a4', NULL, '2022-04-04 11:22:37'),
+(4, 'TM04', 'LIONS/024', 'The Lions', 785415289, 'lions@gmail.com', '86aa71c6832f46e2d79134fe3d5080b7', NULL, '2022-05-21 23:08:41');
 
 -- --------------------------------------------------------
 
@@ -101,15 +100,15 @@ CREATE TABLE `delivery_team_members` (
 --
 
 INSERT INTO `delivery_team_members` (`id`, `member_id`, `fname`, `lname`, `email`, `phone`, `role_id`, `delivery_team_id`, `time_of_registration`) VALUES
-(1, 'MB01', 'Thomas', 'Kimeu', 'kimeuthomas@gmail.com', 712579874, 'MSU/001A/022', 'TM01', '2022-04-08 15:10:41'),
-(2, 'MB02', 'David', 'Philip', 'davidphilip@gmail.com', 765248545, 'MSU/001B/022', 'TM02', '2022-04-08 15:10:41'),
-(3, 'MB03', 'Duncan', 'Ondieki', 'ondiekiduncan@gmail.com', 779854258, 'MSU/001C/022', 'TM03', '2022-04-08 15:10:41'),
-(4, 'MB04', 'Mwanzia', 'Kimani', 'kimanimwanzia20@gmail.com', 789542658, 'MSU/001A/022', 'TM02', '2022-04-08 16:03:35'),
-(5, 'MB05', 'James', 'Patrick', 'patrickjames21@gmail.com', 745987456, 'MSU/001A/022', 'TM03', '2022-04-08 16:04:43'),
-(6, 'MB06', 'Caroline', 'Murathe', 'murathercarol@gmail.com', 766879853, 'MSU/001B/022', 'TM01', '2022-04-08 16:06:59'),
-(7, 'MB07', 'Jane', 'Odongo', 'odongojane25@gmail.com', 745783258, 'MSU/001B/022', 'TM03', '2022-04-08 16:07:53'),
-(8, 'MB08', 'Mutia', 'Kioko', 'mutiakioko@gmai.com', 798959863, 'MSU/001C/022', 'TM01', '2022-04-08 16:09:32'),
-(9, 'MB09', 'Angela', 'Mutuku', 'mutukuangie@gmail.com', 725627894, 'MSU/001C/022', 'TM02', '2022-04-08 16:10:31');
+(1, 'MB01', 'Thomas', 'Kimeu', 'kimeuthomas@gmail.com', 712579874, 'MSU/001A/024', 'TM01', '2022-04-08 15:10:41'),
+(2, 'MB02', 'David', 'Philip', 'davidphilip@gmail.com', 765248545, 'MSU/001B/024', 'TM02', '2022-04-08 15:10:41'),
+(3, 'MB03', 'Duncan', 'Ondieki', 'ondiekiduncan@gmail.com', 779854258, 'MSU/001C/024', 'TM03', '2022-04-08 15:10:41'),
+(4, 'MB04', 'Mwanzia', 'Kimani', 'kimanimwanzia20@gmail.com', 789542658, 'MSU/001A/024', 'TM02', '2022-04-08 16:03:35'),
+(5, 'MB05', 'James', 'Patrick', 'patrickjames21@gmail.com', 745987456, 'MSU/001A/024', 'TM03', '2022-04-08 16:04:43'),
+(6, 'MB06', 'Caroline', 'Murathe', 'murathercarol@gmail.com', 766879853, 'MSU/001B/024', 'TM01', '2022-04-08 16:06:59'),
+(7, 'MB07', 'Jane', 'Odongo', 'odongojane25@gmail.com', 745783258, 'MSU/001B/024', 'TM03', '2022-04-08 16:07:53'),
+(8, 'MB08', 'Mutia', 'Kioko', 'mutiakioko@gmai.com', 798959863, 'MSU/001C/024', 'TM01', '2022-04-08 16:09:32'),
+(9, 'MB09', 'Angela', 'Mutuku', 'mutukuangie@gmail.com', 725627894, 'MSU/001C/024', 'TM02', '2022-04-08 16:10:31');
 
 -- --------------------------------------------------------
 
@@ -171,7 +170,7 @@ CREATE TABLE `request_status` (
 --
 
 INSERT INTO `request_status` (`id`, `orderID`, `ip_address`, `request_latitude`, `request_longitude`, `status`, `food_type`, `manual_directions`, `food_description`, `admNo`, `timestamp`) VALUES
-(33, 'D8FVMAT', '165.105.70.4', '-1.2920659', '36.8219462', 'Assigned', 'snaks', 'N/A', 'with juice', 'CIM/00069/021', '2022-11-30 12:40:11');
+(64, '', '192.168. 1.10', '-1.277442', '36.903536', 'Assigned', 'Drinks (Ksh 600 per grate)', 'N/A', '20 crates', 'CIM/00048/021', '2024-03-22 20:46:01');
 
 -- --------------------------------------------------------
 
@@ -191,9 +190,9 @@ CREATE TABLE `role_details` (
 --
 
 INSERT INTO `role_details` (`id`, `role_id`, `role_name`, `role_description`) VALUES
-(1, 'MSU/001A/022', 'Driver', 'Drive the assigned university vehicle'),
-(2, 'MSU/001B/022', 'Paramedic', 'Provide emergency medical assistance, such as CPR or bandaging a wound. Quickly and efficiently assess a patient\'s condition and determine the best course of treatment.'),
-(3, 'MSU/001C/022', 'Nurse', 'to ensure that every patient receives the direct and proper care they need.');
+(1, 'MSU/001A/024', 'Driver', 'Drive the assigned hotel vehicle'),
+(2, 'MSU/001B/024', 'Kitchen staff', 'Make sure the requested order is ready'),
+(3, 'MSU/001C/024', 'Waiter', 'to ensure that every customer receives proper services');
 
 -- --------------------------------------------------------
 
@@ -205,7 +204,6 @@ CREATE TABLE `room` (
   `name` varchar(250) NOT NULL,
   `number` varchar(250) NOT NULL,
   `room_type` varchar(250) NOT NULL,
-  `image` varchar(250) NOT NULL,
   `date` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -213,8 +211,16 @@ CREATE TABLE `room` (
 -- Dumping data for table `room`
 --
 
-INSERT INTO `room` (`name`, `number`, `room_type`, `image`, `date`) VALUES
-('Kirigo Kipngeno', '0115532544', 'single', '65e200d0619d6.jpg', '2024-03-21 07:00:00.000000');
+INSERT INTO `room` (`name`, `number`, `room_type`, `date`) VALUES
+('Kirigo Kipngeno', '0115532544', 'single', '2024-03-21 07:00:00.000000'),
+('Gideon Bett', '0790729720', 'single', '2024-03-12 21:00:00.000000'),
+('Brian Kipkorir', '0711362472', 'Elegant Room', '2024-03-19 21:00:00.000000'),
+('Gideon Bett', '0790729720', 'Child Room', '2024-03-20 21:00:00.000000'),
+('Gideon Bett', '0790729720', 'VIP Room', '2024-03-25 21:00:00.000000'),
+('Maseno university', '0790729721', 'Family Suite', '2024-03-22 21:00:00.000000'),
+('Chikoko Mkamburi', '0789765432', 'Luxury Suite', '2024-03-26 21:00:00.000000'),
+('Girigo', '0785415289', 'Personal Room', '2024-03-29 21:00:00.000000'),
+('Brian Kipkorir', '0711362472', 'VIP Room', '2024-03-22 21:00:00.000000');
 
 -- --------------------------------------------------------
 
@@ -251,7 +257,9 @@ CREATE TABLE `users_details` (
 --
 
 INSERT INTO `users_details` (`id`, `regNum`, `firstname`, `lastname`, `emailaddress`, `phonenumber`, `password`, `password_reset_token`, `date`) VALUES
-(1, 'CIM/00069/021', 'kirigo', 'kipngeno', 'kipngenokirigo@gmail.com', '0711362472', '4cb8e45bd18070ba7d3af01bd3f0f619', NULL, '2022-05-20 09:30:42');
+(2, 'CIM/00048/021', 'Gideon', 'Bett', 'kiprotichgideonbett@gmail.com', '0790729720', 'f98dcbfe883f1c67f2b663bdb1ae6675', NULL, '2024-03-08 22:54:12'),
+(1, 'CIM/00069/021', 'kirigo', 'kipngeno', 'kipngenokirigo@gmail.com', '0711362472', '4cb8e45bd18070ba7d3af01bd3f0f619', NULL, '2022-05-20 09:30:42'),
+(3, 'CIM/00092/021', 'Brian', 'kipkorir', 'kipkorirbrian@gmail.com', '0711362472', '154e3905526872cd1c881aa752960b7d', NULL, '2024-03-08 22:57:46');
 
 --
 -- Indexes for dumped tables
@@ -278,7 +286,7 @@ ALTER TABLE `delivery_team`
 ALTER TABLE `delivery_team_members`
   ADD PRIMARY KEY (`member_id`),
   ADD KEY `role_id` (`role_id`),
-  ADD KEY `delivery_team_id` (`delivery_team_id`) USING BTREE,
+  ADD KEY `rescue_team_id` (`delivery_team_id`) USING BTREE,
   ADD KEY `member_sno` (`id`);
 
 --
@@ -287,7 +295,7 @@ ALTER TABLE `delivery_team_members`
 ALTER TABLE `delivery_team_tasks`
   ADD PRIMARY KEY (`id`),
   ADD KEY `assigning_admin_id` (`assigning_admin_id`),
-  ADD KEY `delivery_team_id` (`delivery_team_id`),
+  ADD KEY `rescue_team_id` (`delivery_team_id`),
   ADD KEY `helpcode` (`food_order_code`);
 
 --
@@ -334,7 +342,7 @@ ALTER TABLE `users_details`
 -- AUTO_INCREMENT for table `admin_details`
 --
 ALTER TABLE `admin_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `delivery_team`
@@ -364,7 +372,7 @@ ALTER TABLE `failed_list`
 -- AUTO_INCREMENT for table `request_status`
 --
 ALTER TABLE `request_status`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `role_details`
@@ -382,7 +390,7 @@ ALTER TABLE `success_list`
 -- AUTO_INCREMENT for table `users_details`
 --
 ALTER TABLE `users_details`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
@@ -393,14 +401,13 @@ ALTER TABLE `users_details`
 --
 ALTER TABLE `delivery_team_members`
   ADD CONSTRAINT `member_role` FOREIGN KEY (`role_id`) REFERENCES `role_details` (`role_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `delivery_team` FOREIGN KEY (`delivery_team_id`) REFERENCES `delivery_team` (`team_id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `rescue_team` FOREIGN KEY (`delivery_team_id`) REFERENCES `delivery_team` (`team_id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `delivery_team_tasks`
 --
 ALTER TABLE `delivery_team_tasks`
   ADD CONSTRAINT `adminid` FOREIGN KEY (`assigning_admin_id`) REFERENCES `admin_details` (`admin_id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `helpid` FOREIGN KEY (`food_order_code`) REFERENCES `request_status` (`orderID`) ON UPDATE CASCADE,
   ADD CONSTRAINT `teamid` FOREIGN KEY (`delivery_team_id`) REFERENCES `delivery_team` (`team_id`) ON UPDATE CASCADE;
 
 --
