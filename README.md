@@ -6,7 +6,6 @@ The Hotel Management System is a web-based application designed to streamline th
 # Features
 - User-friendly dashboard for hotel staff to manage room bookings, reservations, and customer information.
 - Online booking system for customers to view available rooms, make reservations, and manage their bookings.
-- Integrated payment processing for secure and convenient transactions.
 - Customizable room categories and rates to accommodate different customer preferences.
 - Reporting and analytics tools to track hotel performance and occupancy rates.
 
