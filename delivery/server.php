@@ -61,7 +61,7 @@ if (isset($_POST['delivery_login_btn'])) {
   	  header('location: dashboard.php');
   	}else{
   		array_push($errors, "Incorrect Username or Password");
-      header('location: index.php');
+      header('location: user.php');
   	}
   }
 }
@@ -357,7 +357,7 @@ if(isset($_POST['update_password_btn'])){
     $password = md5($password2);//encrypt the password before saving in the database
     $password_update = "UPDATE `delivery_team` SET `team_password`='$password' WHERE password_reset_token = '$token' ";
     $results = mysqli_query($db, $password_update);
-    header("Location: index.php");
+    header("Location: user.php");
   }else{
     echo '<script>
  alert("Unable to Change Password. Please Contact the System Administrator!");

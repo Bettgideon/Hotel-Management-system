@@ -89,7 +89,7 @@
                 <div class="col-md-3"></div>
             </div>
         </header>
-        <form method="post" action="server.php" enctype="multipart/form-data" class="login-form">
+        <form method="post" action="server.php" enctype="multipart/form-data" class="login-form" style="background-color: #3DD498; padding: 20px;">
             <div class="form-group">
                 <?php include 'errors.php'; ?>
                 <label for="admin_id">User ID:</label>

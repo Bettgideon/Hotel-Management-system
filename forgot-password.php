@@ -78,7 +78,7 @@ include 'server.php';
             unset($_SESSION['email_status']);
         }
         ?>
-        <form method="POST" action="server.php">
+        <form method="POST" action="server.php" style="background-color: #3DD498; padding: 20px;">
             <?php include 'errors.php'; ?>
             <div class="form-group">
                 <label for="inputEmail3">Username</label>

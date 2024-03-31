@@ -77,6 +77,7 @@ if (count($errors) == 0) {
   }
 }
 
+
   // LOGIN USER
     if (isset($_POST['login_btn'])) {
       $orderCode= strtoupper(random_string(7));
@@ -219,8 +220,8 @@ if(isset($_POST['manual-direction-btn'])){
   $long= 0;
   $ip= $_POST['ip'];
   $foodType= $_POST['food_type'];
-  $incident_directions= $_POST['student_manual_direction'];
-  $description= $_POST['student_food_description'];
+  $incident_directions= $_POST['user_manual_direction'];
+  $description= $_POST['user_food_description'];
 
 
   if (empty($adm)) { array_push($errors, "Reg Number is missing"); }

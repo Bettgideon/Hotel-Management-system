@@ -1,217 +1,109 @@
 <?php
 include 'server.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>User | Registration</title>
-  <?php
-include './components/header.php';
-?>
-<style>
-.bg-ffe6cc {
-    background-color: #ffe6cc;
-}
+  <title>User Registration</title>
+  <?php include './components/header.php'; ?>
+  <style>
+    .container {
+      width: 1000px;
+      padding: 20px;
+      background-color: #d2d6de;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-.container,
-.register-page-section,
-.register-page {
-    background-color: #ffe6cc;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    form {
+      background-color: #ffe6cc;
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-.register-page-header h2 {
-    color: #fff;
-}
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+    }
 
-.btn-success {
-    background-color: #28a745;
-    color: #fff;
-}
+    .form-group input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
 
-.btn-success:hover {
-    background-color: #218838;
-}
+    .form-group::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-.login-col {
-    text-align: center;
-}
+    .text-center {
+      text-align: center;
+    }
+  </style>
+</head>
 
-.login-col p {
-    margin-top: 20px;
-}
-
-</style>
-  </head>
-  <body style="background-color: #d2d6de">
-    <div class="container register-page-section">
-      <div class="row mt-2 register-page-row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6 mt-5 register-page">
-          <div class="col-md-12 mb-2 register-page-header">
-            <h2 class="text-center" style="color: #fff">
-             Hotel Management Information System Registration Form
-            </h2>
-
-            <div class="row">
-              <div class="col-md-3"></div>
-             
-              <div class="col-md-3"></div>
-            </div>
-          </div>
-          <form
-    method="post"
-    action="server.php"
-    enctype="multipart/form-data"
-    class="register-form bg-ffe6cc"
-  >
-    <!-- Form fields -->
-</form>
-
-</form>
-            <div class="form-group row">
-              <label for="inputEmail3" class="col-sm-3 col-form-label"
-                >Username</label
-              >
-              <div class="col-sm-7">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="inputEmail4"
-                  placeholder="e.g CIM/00020/021"
-                  name="regno"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputEmail5" class="col-sm-3 col-form-label"
-                >First Name</label
-              >
-              <div class="col-sm-7">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="inputEmail3"
-                  placeholder="First Name"
-                  name="firstname"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputEmail6" class="col-sm-3 col-form-label"
-                >Last name</label
-              >
-              <div class="col-sm-7">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="inputEmail7"
-                  placeholder="Last Name"
-                  name="lastname"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputEmail8" class="col-sm-3 col-form-label"
-                >Email</label
-              >
-              <div class="col-sm-7">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="inputEmail9"
-                  placeholder="Email Address"
-                  name="emailaddress"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="inputEmail10" class="col-sm-3 col-form-label"
-                >Phone</label
-              >
-              <div class="col-sm-7">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="inputEmail11"
-                  placeholder="071034...."
-                  name="phone"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="form-group row ">
-              <label for="inputPassword3" class="col-sm-3 col-form-label"
-                >Password</label
-              >
-              <div class="col-sm-7">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="txtPassword"
-                  onkeyup="CheckPasswordStrength(this.value)"
-                  placeholder="Password"
-                  name="password"
-                  required
-                />
-         
-              </div>
-              <span id="password_strength"></span>
-            </div>
-            <div class="form-group row">
-              <label for="inputPassword3" class="col-sm-3 col-form-label pr-0"
-                >Confirm Password</label
-              >
-              <div class="col-sm-7">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="txtPassword2"
-                  placeholder="Confirm Password"
-                  onkeyup="CheckPasswordStrength2(this.value)"
-                  name="confirmpassword"
-                  required
-                />
-              </div>
-              <span id="password_strength_confirm"></span>
-            </div>
-            
-            <div class="form-group row">
-              <div class="col-sm-3"></div>
-              <div class="col-sm-7">
-                <button
-                  type="submit"
-                  class="btn btn-success btn-block"
-                  name="register_btn"
-                  id="regBtn"
-                >
-                  Register
-                </button>
-              </div>
-            </div>
-
-            <hr />
-            <!--Login-->
-            <div class="row">
-              <div class="col-sm-12 login-col">
-                <p class="lead">
-                  Already have an account ?
-                  <a href="./user.php" class="btn btn-primary ">Login Here</a>
-                </p>
-              </div>
-            </div>
-          </form>
+<body style="background-color: #d2d6de">
+  <div class="container register-page-section">
+    <div class="row mt-2 register-page-row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 mt-5 register-page">
+        <div class="col-md-12 mb-2 register-page-header">
+          <h2 class="text-center" style="color: #fff; background-color: #3DD498; width: 100%;">
+            Hotel Management System User Signup Form
+          </h2>
         </div>
-        <div class="col-md-3"></div>
+        <form method="post" action="server.php" enctype="multipart/form-data" class="register-form" style="background-color: #3DD498; padding: 20px;">
+          <div class="form-group">
+            <label for="inputEmail4">Username</label>
+            <input type="text" class="form-control" id="inputEmail4" placeholder="e.g CIM/00022/21" name="regno" required />
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3">First Name</label>
+            <input type="text" class="form-control" id="inputEmail3" placeholder="First Name" name="firstname" required />
+          </div>
+          <div class="form-group">
+            <label for="inputEmail7">Last Name</label>
+            <input type="text" class="form-control" id="inputEmail7" placeholder="Last Name" name="lastname" required />
+          </div>
+          <div class="form-group">
+            <label for="inputEmail9">Email</label>
+            <input type="email" class="form-control" id="inputEmail9" placeholder="Email Address" name="emailaddress" required />
+          </div>
+          <div class="form-group">
+            <label for="inputEmail11">Phone</label>
+            <input type="number" class="form-control" id="inputEmail11" placeholder="0710118...." name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="txtPassword">Password</label>
+            <input type="password" class="form-control" id="txtPassword" onkeyup="CheckPasswordStrength(this.value)" placeholder="Password" name="password" required />
+            <span id="password_strength"></span>
+          </div>
+          <div class="form-group">
+            <label for="txtPassword2">Confirm Password</label>
+            <input type="password" class="form-control" id="txtPassword2" placeholder="Confirm Password" onkeyup="CheckPasswordStrength2(this.value)" name="confirmpassword" required />
+            <span id="password_strength_confirm"></span>
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="btn btn-success btn-block" name="register_btn" id="regBtn" style="background-color: #006400;">Register</button>
+          </div>
+          <div class="login-link text-center">
+  <p class="lead">Already have an account?</p>
+  <a href="./user.php" class="btn btn-primary">Login Here</a>
+</div>
+
+        </form>
       </div>
+      <div class="col-md-3"></div>
     </div>
+  </div>
+
 
     <!-- Optional JavaScript -->
     <script type="text/javascript">

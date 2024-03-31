@@ -86,7 +86,7 @@
         <header>
             <h2>Password Reset</h2>
         </header>
-        <form method="POST" action="server.php" class="login-form">
+        <form method="POST" action="server.php" class="login-form" style="background-color: #3DD498; padding: 20px;">
             <div class="form-group row">
                 <?php include 'errors.php'; ?>
                 <label for="inputEmail3" class="col-sm-3 col-form-label">Email Address</label>

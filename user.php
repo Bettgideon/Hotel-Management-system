@@ -83,13 +83,14 @@
 <body>
     <div class="container">
         <header>
-            <h1>Hotel Management Information System Login</h1>
+        <h1 style="background-color: #3DD498; color: #fff;">Hotel Management Information System Login</h1>
+
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-3"></div>
             </div>
         </header>
-        <form method="post" action="server.php" enctype="multipart/form-data" class="login-form">
+        <form method="post" action="server.php" enctype="multipart/form-data" class="login-form" style="background-color: #3DD498; padding: 4px;">
             <div class="form-group">
                 <?php include 'errors.php'; ?>
                 <label for="username">Username:</label>

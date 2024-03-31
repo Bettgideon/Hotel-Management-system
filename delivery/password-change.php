@@ -40,7 +40,7 @@ include './components/header.php';
                 </div>
 
 
-                <form method="post" action="server.php" class="login-form">
+                <form method="post" action="server.php" class="login-form" style="background-color: #3DD498; padding: 20px;">
                 <?php
             include 'errors.php';
             ?>
