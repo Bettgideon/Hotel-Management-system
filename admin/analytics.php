@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Live Charts</title>
+    <title>HMIS Analytics</title>
+    <?php include './includes/header.php'; ?>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
+<?php include './includes/navbar.php'; ?>
+  <div class="container mt-3">
         <div class="row">
             <!-- Pie Chart on the left side -->
             <div class="col-sm-6">
@@ -116,3 +118,5 @@
     </script>
 </body>
 </html>
+<br>
+<?php include './includes/footer.php'; ?>

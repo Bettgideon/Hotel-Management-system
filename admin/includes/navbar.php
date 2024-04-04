@@ -29,21 +29,20 @@
             <a class="nav-link active" href="team.php">Delivery Teams</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link active" href="analytics.php">Analytics</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link active" href="moderators.php">Moderators</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="booked.php">Booked Rooms</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" href="drivers.php">Drivers</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="javascript:void(0)">
               <?php echo "Welcome " . "<strong style='color:white;'>" . $_SESSION['admin_firstname'] . " " . $_SESSION['admin_lastname'];  ?> </a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link btn btn-danger" href="logout.php">Logout </a>
+            <a class="nav-link btn btn-danger" href="logout.php">Log out </a>
           </li>
         <?php
         }
